@@ -1,0 +1,3834 @@
+
+**** Build of configuration Debug for project client ****
+
+make all 
+Building file: ../clnt_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_func.d" -MT"clnt_func.d" -o "clnt_func.o" "../clnt_func.c"
+../clnt_func.c: In function ‘analyze_Response’:
+../clnt_func.c:234:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../clnt_func.c:244:3: warning: enumeration value ‘NOSTATE’ not handled in switch [-Wswitch]
+../clnt_func.c: In function ‘process_Response_Msg_Connection’:
+../clnt_func.c:306:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘request_Message_Connect_2_Server’:
+../clnt_func.c:440:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘tryToConnect’:
+../clnt_func.c:522:18: warning: initialization discards ‘const’ qualifier from pointer target type [enabled by default]
+Finished building: ../clnt_func.c
+../clnt_func.c: In function ‘recvList’:
+ 
+../clnt_func.c:371:8: warning: ‘tmpNick’ is used uninitialized in this function [-Wuninitialized]
+Building file: ../clnt_main.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_main.d" -MT"clnt_main.d" -o "clnt_main.o" "../clnt_main.c"
+Finished building: ../clnt_main.c
+ 
+Building file: ../low_Level_Func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"low_Level_Func.d" -MT"low_Level_Func.d" -o "low_Level_Func.o" "../low_Level_Func.c"
+Finished building: ../low_Level_Func.c
+ 
+Building target: client
+Invoking: GCC C Linker
+gcc  -o "client"  ./clnt_func.o ./clnt_main.o ./low_Level_Func.o   
+Finished building target: client
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+Building file: ../host_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"host_func.d" -MT"host_func.d" -o "host_func.o" "../host_func.c"
+../host_func.c: In function ‘handleEvent_Host’:
+../host_func.c:65:5: warning: pointer targets in passing argument 3 of ‘accept’ differ in signedness [-Wpointer-sign]
+/usr/include/i386-linux-gnu/sys/socket.h:214:12: note: expected ‘socklen_t * __restrict__’ but argument is of type ‘int *’
+../host_func.c: In function ‘analyze_Message’:
+../host_func.c:102:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../host_func.c:100:6: warning: variable ‘recvMsgSize’ set but not used [-Wunused-but-set-variable]
+../host_func.c: In function ‘handle_S_JOIN’:
+../host_func.c:138:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../host_func.c: In function ‘handle_S_LIST’:
+../host_func.c:191:3: warning: embedded ‘\0’ in format [-Wformat-contains-nul]
+../host_func.c: In function ‘terminate_Connection’:
+Finished building: ../host_func.c
+../host_func.c:219:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+ 
+Building file: ../host_main.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"host_main.d" -MT"host_main.d" -o "host_main.o" "../host_main.c"
+../host_main.c: In function ‘main’:
+../host_main.c:29:9: warning: implicit declaration of function ‘handleEvent_Host’ [-Wimplicit-function-declaration]
+Finished building: ../host_main.c
+ 
+Building file: ../low_Level_Func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"low_Level_Func.d" -MT"low_Level_Func.d" -o "low_Level_Func.o" "../low_Level_Func.c"
+Finished building: ../low_Level_Func.c
+ 
+Building target: server
+Invoking: GCC C Linker
+gcc  -o "server"  ./host_func.o ./host_main.o ./low_Level_Func.o   
+Finished building target: server
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+Building file: ../clnt_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_func.d" -MT"clnt_func.d" -o "clnt_func.o" "../clnt_func.c"
+../clnt_func.c: In function ‘analyze_Response’:
+../clnt_func.c:234:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../clnt_func.c:244:3: warning: enumeration value ‘NOSTATE’ not handled in switch [-Wswitch]
+../clnt_func.c: In function ‘process_Response_Msg_Connection’:
+../clnt_func.c:306:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘request_Message_Connect_2_Server’:
+../clnt_func.c:446:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘tryToConnect’:
+../clnt_func.c:528:18: warning: initialization discards ‘const’ qualifier from pointer target type [enabled by default]
+../clnt_func.c: In function ‘recvList’:
+../clnt_func.c:377:8: warning: ‘tmpNick’ is used uninitialized in this function [-Wuninitialized]
+Finished building: ../clnt_func.c
+ 
+Building file: ../clnt_main.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_main.d" -MT"clnt_main.d" -o "clnt_main.o" "../clnt_main.c"
+Finished building: ../clnt_main.c
+ 
+Building target: client
+Invoking: GCC C Linker
+gcc  -o "client"  ./clnt_func.o ./clnt_main.o ./low_Level_Func.o   
+Finished building target: client
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+Building file: ../clnt_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_func.d" -MT"clnt_func.d" -o "clnt_func.o" "../clnt_func.c"
+../clnt_func.c: In function ‘analyze_Response’:
+../clnt_func.c:234:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../clnt_func.c:244:3: warning: enumeration value ‘NOSTATE’ not handled in switch [-Wswitch]
+../clnt_func.c: In function ‘process_Response_Msg_Connection’:
+../clnt_func.c:306:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘request_Message_Connect_2_Server’:
+../clnt_func.c:447:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘tryToConnect’:
+../clnt_func.c:529:18: warning: initialization discards ‘const’ qualifier from pointer target type [enabled by default]
+../clnt_func.c: In function ‘recvList’:
+../clnt_func.c:378:8: warning: ‘tmpNick’ is used uninitialized in this function [-Wuninitialized]
+Finished building: ../clnt_func.c
+ 
+Building target: client
+Invoking: GCC C Linker
+gcc  -o "client"  ./clnt_func.o ./clnt_main.o ./low_Level_Func.o   
+Finished building target: client
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+Building file: ../host_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"host_func.d" -MT"host_func.d" -o "host_func.o" "../host_func.c"
+../host_func.c: In function ‘handleEvent_Host’:
+../host_func.c:65:5: warning: pointer targets in passing argument 3 of ‘accept’ differ in signedness [-Wpointer-sign]
+/usr/include/i386-linux-gnu/sys/socket.h:214:12: note: expected ‘socklen_t * __restrict__’ but argument is of type ‘int *’
+../host_func.c: In function ‘analyze_Message’:
+../host_func.c:102:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../host_func.c:100:6: warning: variable ‘recvMsgSize’ set but not used [-Wunused-but-set-variable]
+../host_func.c: In function ‘handle_S_JOIN’:
+../host_func.c:138:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../host_func.c: In function ‘terminate_Connection’:
+../host_func.c:222:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+Finished building: ../host_func.c
+ 
+Building target: server
+Invoking: GCC C Linker
+gcc  -o "server"  ./host_func.o ./host_main.o ./low_Level_Func.o   
+Finished building target: server
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+Building file: ../clnt_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_func.d" -MT"clnt_func.d" -o "clnt_func.o" "../clnt_func.c"
+../clnt_func.c: In function ‘analyze_Response’:
+../clnt_func.c:234:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../clnt_func.c:244:3: warning: enumeration value ‘NOSTATE’ not handled in switch [-Wswitch]
+../clnt_func.c: In function ‘process_Response_Msg_Connection’:
+../clnt_func.c:306:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘request_Message_Connect_2_Server’:
+../clnt_func.c:440:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘tryToConnect’:
+../clnt_func.c:522:18: warning: initialization discards ‘const’ qualifier from pointer target type [enabled by default]
+../clnt_func.c: In function ‘recvList’:
+../clnt_func.c:371:8: warning: ‘tmpNick’ is used uninitialized in this function [-Wuninitialized]
+Finished building: ../clnt_func.c
+ 
+Building file: ../clnt_main.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_main.d" -MT"clnt_main.d" -o "clnt_main.o" "../clnt_main.c"
+Finished building: ../clnt_main.c
+ 
+Building target: client
+Invoking: GCC C Linker
+gcc  -o "client"  ./clnt_func.o ./clnt_main.o ./low_Level_Func.o   
+Finished building target: client
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+Building file: ../host_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"host_func.d" -MT"host_func.d" -o "host_func.o" "../host_func.c"
+../host_func.c: In function ‘handleEvent_Host’:
+../host_func.c:65:5: warning: pointer targets in passing argument 3 of ‘accept’ differ in signedness [-Wpointer-sign]
+/usr/include/i386-linux-gnu/sys/socket.h:214:12: note: expected ‘socklen_t * __restrict__’ but argument is of type ‘int *’
+../host_func.c: In function ‘analyze_Message’:
+../host_func.c:102:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../host_func.c:100:6: warning: variable ‘recvMsgSize’ set but not used [-Wunused-but-set-variable]
+../host_func.c: In function ‘handle_S_JOIN’:
+../host_func.c:138:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../host_func.c: In function ‘terminate_Connection’:
+../host_func.c:220:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+Finished building: ../host_func.c
+ 
+Building target: server
+Invoking: GCC C Linker
+gcc  -o "server"  ./host_func.o ./host_main.o ./low_Level_Func.o   
+Finished building target: server
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+Building file: ../clnt_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_func.d" -MT"clnt_func.d" -o "clnt_func.o" "../clnt_func.c"
+../clnt_func.c: In function ‘handleEvent_Idle’:
+../clnt_func.c:62:3: error: too few arguments to function ‘analyze_Input’
+../clnt_header.h:86:6: note: declared here
+../clnt_func.c: In function ‘analyze_Response’:
+../clnt_func.c:242:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../clnt_func.c:254:3: warning: enumeration value ‘NOSTATE’ not handled in switch [-Wswitch]
+../clnt_func.c: In function ‘process_Response_Msg_Connection’:
+../clnt_func.c:316:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘request_Message_Connect_2_Server’:
+../clnt_func.c:450:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘tryToConnect’:
+../clnt_func.c:532:18: warning: initialization discards ‘const’ qualifier from pointer target type [enabled by default]
+make: *** [clnt_func.o] 오류 1
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+Building file: ../host_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"host_func.d" -MT"host_func.d" -o "host_func.o" "../host_func.c"
+../host_func.c: In function ‘handleEvent_Host’:
+../host_func.c:65:5: warning: pointer targets in passing argument 3 of ‘accept’ differ in signedness [-Wpointer-sign]
+/usr/include/i386-linux-gnu/sys/socket.h:214:12: note: expected ‘socklen_t * __restrict__’ but argument is of type ‘int *’
+../host_func.c: In function ‘analyze_Message’:
+../host_func.c:102:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../host_func.c:100:6: warning: variable ‘recvMsgSize’ set but not used [-Wunused-but-set-variable]
+../host_func.c: In function ‘handle_S_JOIN’:
+../host_func.c:138:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../host_func.c: In function ‘terminate_Connection’:
+Finished building: ../host_func.c
+../host_func.c:220:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+ 
+Building target: server
+Invoking: GCC C Linker
+gcc  -o "server"  ./host_func.o ./host_main.o ./low_Level_Func.o   
+Finished building target: server
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+Building file: ../clnt_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_func.d" -MT"clnt_func.d" -o "clnt_func.o" "../clnt_func.c"
+../clnt_func.c: In function ‘analyze_Response’:
+../clnt_func.c:242:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../clnt_func.c:254:3: warning: enumeration value ‘NOSTATE’ not handled in switch [-Wswitch]
+../clnt_func.c: In function ‘process_Response_Msg_Connection’:
+../clnt_func.c:316:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘request_Message_Connect_2_Server’:
+../clnt_func.c:450:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘tryToConnect’:
+../clnt_func.c:532:18: warning: initialization discards ‘const’ qualifier from pointer target type [enabled by default]
+../clnt_func.c: In function ‘recvList’:
+../clnt_func.c:381:8: warning: ‘tmpNick’ is used uninitialized in this function [-Wuninitialized]
+Finished building: ../clnt_func.c
+ 
+Building file: ../clnt_main.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_main.d" -MT"clnt_main.d" -o "clnt_main.o" "../clnt_main.c"
+Finished building: ../clnt_main.c
+ 
+Building target: client
+Invoking: GCC C Linker
+gcc  -o "client"  ./clnt_func.o ./clnt_main.o ./low_Level_Func.o   
+Finished building target: client
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+Building file: ../clnt_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_func.d" -MT"clnt_func.d" -o "clnt_func.o" "../clnt_func.c"
+../clnt_func.c: In function ‘analyze_Response’:
+../clnt_func.c:242:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../clnt_func.c:260:4: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../clnt_func.c:254:3: warning: enumeration value ‘NOSTATE’ not handled in switch [-Wswitch]
+../clnt_func.c: In function ‘process_Response_Msg_Connection’:
+../clnt_func.c:317:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘tryToConnect’:
+../clnt_func.c:533:18: warning: initialization discards ‘const’ qualifier from pointer target type [enabled by default]
+../clnt_func.c: In function ‘recvList’:
+../clnt_func.c:382:8: warning: ‘tmpNick’ is used uninitialized in this function [-Wuninitialized]
+Finished building: ../clnt_func.c
+ 
+Building target: client
+Invoking: GCC C Linker
+gcc  -o "client"  ./clnt_func.o ./clnt_main.o ./low_Level_Func.o   
+Finished building target: client
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+Building file: ../clnt_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_func.d" -MT"clnt_func.d" -o "clnt_func.o" "../clnt_func.c"
+../clnt_func.c: In function ‘analyze_Response’:
+../clnt_func.c:242:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../clnt_func.c:260:4: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../clnt_func.c:254:3: warning: enumeration value ‘NOSTATE’ not handled in switch [-Wswitch]
+../clnt_func.c: In function ‘process_Response_Msg_Connection’:
+../clnt_func.c:317:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘tryToConnect’:
+../clnt_func.c:533:18: warning: initialization discards ‘const’ qualifier from pointer target type [enabled by default]
+../clnt_func.c: In function ‘recvList’:
+../clnt_func.c:382:8: warning: ‘tmpNick’ is used uninitialized in this function [-Wuninitialized]
+Finished building: ../clnt_func.c
+ 
+Building target: client
+Invoking: GCC C Linker
+gcc  -o "client"  ./clnt_func.o ./clnt_main.o ./low_Level_Func.o   
+Finished building target: client
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+Building file: ../host_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"host_func.d" -MT"host_func.d" -o "host_func.o" "../host_func.c"
+../host_func.c: In function ‘handleEvent_Host’:
+../host_func.c:65:5: warning: pointer targets in passing argument 3 of ‘accept’ differ in signedness [-Wpointer-sign]
+/usr/include/i386-linux-gnu/sys/socket.h:214:12: note: expected ‘socklen_t * __restrict__’ but argument is of type ‘int *’
+../host_func.c: In function ‘analyze_Message’:
+../host_func.c:102:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../host_func.c:100:6: warning: variable ‘recvMsgSize’ set but not used [-Wunused-but-set-variable]
+../host_func.c: In function ‘handle_S_JOIN’:
+../host_func.c:138:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../host_func.c: In function ‘handle_S_LIST’:
+../host_func.c:179:5: error: expected expression before ‘)’ token
+../host_func.c: In function ‘terminate_Connection’:
+../host_func.c:221:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+make: *** [host_func.o] 오류 1
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+Building file: ../clnt_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_func.d" -MT"clnt_func.d" -o "clnt_func.o" "../clnt_func.c"
+../clnt_func.c: In function ‘analyze_Response’:
+../clnt_func.c:242:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../clnt_func.c:260:4: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../clnt_func.c:254:3: warning: enumeration value ‘NOSTATE’ not handled in switch [-Wswitch]
+../clnt_func.c: In function ‘process_Response_Msg_Connection’:
+../clnt_func.c:317:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘tryToConnect’:
+../clnt_func.c:533:18: warning: initialization discards ‘const’ qualifier from pointer target type [enabled by default]
+../clnt_func.c: In function ‘recvList’:
+../clnt_func.c:382:8: warning: ‘tmpNick’ is used uninitialized in this function [-Wuninitialized]
+Finished building: ../clnt_func.c
+ 
+Building target: client
+Invoking: GCC C Linker
+gcc  -o "client"  ./clnt_func.o ./clnt_main.o ./low_Level_Func.o   
+Finished building target: client
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+Building file: ../host_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"host_func.d" -MT"host_func.d" -o "host_func.o" "../host_func.c"
+../host_func.c: In function ‘handleEvent_Host’:
+../host_func.c:65:5: warning: pointer targets in passing argument 3 of ‘accept’ differ in signedness [-Wpointer-sign]
+/usr/include/i386-linux-gnu/sys/socket.h:214:12: note: expected ‘socklen_t * __restrict__’ but argument is of type ‘int *’
+../host_func.c: In function ‘analyze_Message’:
+../host_func.c:102:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../host_func.c:100:6: warning: variable ‘recvMsgSize’ set but not used [-Wunused-but-set-variable]
+../host_func.c: In function ‘handle_S_JOIN’:
+../host_func.c:138:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../host_func.c: In function ‘handle_S_LIST’:
+../host_func.c:179:6: error: ‘true’ undeclared (first use in this function)
+../host_func.c:179:6: note: each undeclared identifier is reported only once for each function it appears in
+../host_func.c:183:44: error: expected ‘)’ before ‘{’ token
+../host_func.c:202:2: error: expected expression before ‘}’ token
+../host_func.c: At top level:
+../host_func.c:203:2: error: expected identifier or ‘(’ before ‘else’
+../host_func.c:207:2: warning: data definition has no type or storage class [enabled by default]
+../host_func.c:207:2: warning: type defaults to ‘int’ in declaration of ‘print_S_LIST_Situation’ [-Wimplicit-int]
+../host_func.c:207:2: error: conflicting types for ‘print_S_LIST_Situation’
+../host_func.c:48:6: note: previous definition of ‘print_S_LIST_Situation’ was here
+../host_func.c:208:1: error: expected identifier or ‘(’ before ‘}’ token
+../host_func.c: In function ‘terminate_Connection’:
+../host_func.c:223:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+make: *** [host_func.o] 오류 1
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+Building file: ../host_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"host_func.d" -MT"host_func.d" -o "host_func.o" "../host_func.c"
+../host_func.c: In function ‘handleEvent_Host’:
+../host_func.c:65:5: warning: pointer targets in passing argument 3 of ‘accept’ differ in signedness [-Wpointer-sign]
+/usr/include/i386-linux-gnu/sys/socket.h:214:12: note: expected ‘socklen_t * __restrict__’ but argument is of type ‘int *’
+../host_func.c: In function ‘analyze_Message’:
+../host_func.c:102:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../host_func.c:100:6: warning: variable ‘recvMsgSize’ set but not used [-Wunused-but-set-variable]
+../host_func.c: In function ‘handle_S_JOIN’:
+../host_func.c:138:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../host_func.c: In function ‘handle_S_LIST’:
+../host_func.c:179:6: error: ‘true’ undeclared (first use in this function)
+../host_func.c:179:6: note: each undeclared identifier is reported only once for each function it appears in
+../host_func.c:183:43: warning: division by zero [-Wdiv-by-zero]
+../host_func.c:183:46: error: expected ‘)’ before ‘{’ token
+../host_func.c:208:3: error: expected expression before ‘}’ token
+../host_func.c: In function ‘terminate_Connection’:
+../host_func.c:223:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+make: *** [host_func.o] 오류 1
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+Building file: ../host_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"host_func.d" -MT"host_func.d" -o "host_func.o" "../host_func.c"
+../host_func.c: In function ‘handleEvent_Host’:
+../host_func.c:65:5: warning: pointer targets in passing argument 3 of ‘accept’ differ in signedness [-Wpointer-sign]
+/usr/include/i386-linux-gnu/sys/socket.h:214:12: note: expected ‘socklen_t * __restrict__’ but argument is of type ‘int *’
+../host_func.c: In function ‘analyze_Message’:
+../host_func.c:102:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../host_func.c:100:6: warning: variable ‘recvMsgSize’ set but not used [-Wunused-but-set-variable]
+../host_func.c: In function ‘handle_S_JOIN’:
+../host_func.c:138:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../host_func.c: In function ‘handle_S_LIST’:
+../host_func.c:179:6: error: ‘true’ undeclared (first use in this function)
+../host_func.c:179:6: note: each undeclared identifier is reported only once for each function it appears in
+../host_func.c:186:19: error: ‘obj’ undeclared (first use in this function)
+../host_func.c:202:10: error: expected ‘(’ before ‘{’ token
+../host_func.c: In function ‘terminate_Connection’:
+../host_func.c:223:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+make: *** [host_func.o] 오류 1
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+Building file: ../host_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"host_func.d" -MT"host_func.d" -o "host_func.o" "../host_func.c"
+../host_func.c: In function ‘handleEvent_Host’:
+../host_func.c:65:5: warning: pointer targets in passing argument 3 of ‘accept’ differ in signedness [-Wpointer-sign]
+/usr/include/i386-linux-gnu/sys/socket.h:214:12: note: expected ‘socklen_t * __restrict__’ but argument is of type ‘int *’
+../host_func.c: In function ‘analyze_Message’:
+../host_func.c:102:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../host_func.c:100:6: warning: variable ‘recvMsgSize’ set but not used [-Wunused-but-set-variable]
+../host_func.c: In function ‘handle_S_JOIN’:
+../host_func.c:138:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../host_func.c: In function ‘handle_S_LIST’:
+../host_func.c:179:6: error: ‘true’ undeclared (first use in this function)
+../host_func.c:179:6: note: each undeclared identifier is reported only once for each function it appears in
+../host_func.c:184:19: error: ‘obj’ undeclared (first use in this function)
+../host_func.c:200:10: error: expected ‘(’ before ‘{’ token
+../host_func.c: In function ‘terminate_Connection’:
+../host_func.c:221:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+make: *** [host_func.o] 오류 1
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+Building file: ../host_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"host_func.d" -MT"host_func.d" -o "host_func.o" "../host_func.c"
+../host_func.c: In function ‘handleEvent_Host’:
+../host_func.c:65:5: warning: pointer targets in passing argument 3 of ‘accept’ differ in signedness [-Wpointer-sign]
+/usr/include/i386-linux-gnu/sys/socket.h:214:12: note: expected ‘socklen_t * __restrict__’ but argument is of type ‘int *’
+../host_func.c: In function ‘analyze_Message’:
+../host_func.c:102:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../host_func.c:100:6: warning: variable ‘recvMsgSize’ set but not used [-Wunused-but-set-variable]
+../host_func.c: In function ‘handle_S_JOIN’:
+../host_func.c:138:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../host_func.c: In function ‘handle_S_LIST’:
+../host_func.c:179:6: error: ‘true’ undeclared (first use in this function)
+../host_func.c:179:6: note: each undeclared identifier is reported only once for each function it appears in
+../host_func.c:200:10: error: expected ‘(’ before ‘{’ token
+../host_func.c: In function ‘terminate_Connection’:
+../host_func.c:221:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+make: *** [host_func.o] 오류 1
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+Building file: ../host_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"host_func.d" -MT"host_func.d" -o "host_func.o" "../host_func.c"
+../host_func.c: In function ‘handleEvent_Host’:
+../host_func.c:65:5: warning: pointer targets in passing argument 3 of ‘accept’ differ in signedness [-Wpointer-sign]
+/usr/include/i386-linux-gnu/sys/socket.h:214:12: note: expected ‘socklen_t * __restrict__’ but argument is of type ‘int *’
+../host_func.c: In function ‘analyze_Message’:
+../host_func.c:102:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../host_func.c:100:6: warning: variable ‘recvMsgSize’ set but not used [-Wunused-but-set-variable]
+../host_func.c: In function ‘handle_S_JOIN’:
+../host_func.c:138:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../host_func.c: In function ‘handle_S_LIST’:
+../host_func.c:200:10: error: expected ‘(’ before ‘{’ token
+../host_func.c: In function ‘terminate_Connection’:
+../host_func.c:221:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+make: *** [host_func.o] 오류 1
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+Building file: ../host_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"host_func.d" -MT"host_func.d" -o "host_func.o" "../host_func.c"
+../host_func.c: In function ‘handleEvent_Host’:
+../host_func.c:65:5: warning: pointer targets in passing argument 3 of ‘accept’ differ in signedness [-Wpointer-sign]
+/usr/include/i386-linux-gnu/sys/socket.h:214:12: note: expected ‘socklen_t * __restrict__’ but argument is of type ‘int *’
+../host_func.c: In function ‘analyze_Message’:
+../host_func.c:102:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../host_func.c:100:6: warning: variable ‘recvMsgSize’ set but not used [-Wunused-but-set-variable]
+../host_func.c: In function ‘handle_S_JOIN’:
+../host_func.c:138:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../host_func.c: In function ‘handle_S_LIST’:
+../host_func.c:201:10: error: expected ‘(’ before ‘{’ token
+../host_func.c: In function ‘terminate_Connection’:
+../host_func.c:223:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+make: *** [host_func.o] 오류 1
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+Building file: ../host_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"host_func.d" -MT"host_func.d" -o "host_func.o" "../host_func.c"
+../host_func.c: In function ‘handleEvent_Host’:
+../host_func.c:65:5: warning: pointer targets in passing argument 3 of ‘accept’ differ in signedness [-Wpointer-sign]
+/usr/include/i386-linux-gnu/sys/socket.h:214:12: note: expected ‘socklen_t * __restrict__’ but argument is of type ‘int *’
+../host_func.c: In function ‘analyze_Message’:
+../host_func.c:102:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../host_func.c:100:6: warning: variable ‘recvMsgSize’ set but not used [-Wunused-but-set-variable]
+../host_func.c: In function ‘handle_S_JOIN’:
+../host_func.c:138:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../host_func.c: In function ‘terminate_Connection’:
+../host_func.c:223:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+Finished building: ../host_func.c
+ 
+Building file: ../host_main.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"host_main.d" -MT"host_main.d" -o "host_main.o" "../host_main.c"
+../host_main.c:19:1: error: initializer element is not constant
+../host_main.c: In function ‘main’:
+../host_main.c:31:9: warning: implicit declaration of function ‘handleEvent_Host’ [-Wimplicit-function-declaration]
+make: *** [host_main.o] 오류 1
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+Building file: ../host_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"host_func.d" -MT"host_func.d" -o "host_func.o" "../host_func.c"
+../host_func.c: In function ‘handleEvent_Host’:
+../host_func.c:65:5: warning: pointer targets in passing argument 3 of ‘accept’ differ in signedness [-Wpointer-sign]
+/usr/include/i386-linux-gnu/sys/socket.h:214:12: note: expected ‘socklen_t * __restrict__’ but argument is of type ‘int *’
+../host_func.c: In function ‘analyze_Message’:
+../host_func.c:102:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../host_func.c:100:6: warning: variable ‘recvMsgSize’ set but not used [-Wunused-but-set-variable]
+../host_func.c: In function ‘handle_S_JOIN’:
+../host_func.c:138:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../host_func.c: In function ‘terminate_Connection’:
+../host_func.c:225:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+Finished building: ../host_func.c
+ 
+Building file: ../host_main.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"host_main.d" -MT"host_main.d" -o "host_main.o" "../host_main.c"
+../host_main.c:19:1: error: initializer element is not constant
+../host_main.c: In function ‘main’:
+../host_main.c:31:9: warning: implicit declaration of function ‘handleEvent_Host’ [-Wimplicit-function-declaration]
+make: *** [host_main.o] 오류 1
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+Building file: ../host_main.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"host_main.d" -MT"host_main.d" -o "host_main.o" "../host_main.c"
+../host_main.c: In function ‘main’:
+../host_main.c:31:9: warning: implicit declaration of function ‘handleEvent_Host’ [-Wimplicit-function-declaration]
+Finished building: ../host_main.c
+ 
+Building target: server
+Invoking: GCC C Linker
+gcc  -o "server"  ./host_func.o ./host_main.o ./low_Level_Func.o   
+Finished building target: server
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+Building file: ../host_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"host_func.d" -MT"host_func.d" -o "host_func.o" "../host_func.c"
+../host_func.c: In function ‘handleEvent_Host’:
+../host_func.c:65:5: warning: pointer targets in passing argument 3 of ‘accept’ differ in signedness [-Wpointer-sign]
+/usr/include/i386-linux-gnu/sys/socket.h:214:12: note: expected ‘socklen_t * __restrict__’ but argument is of type ‘int *’
+../host_func.c: In function ‘analyze_Message’:
+../host_func.c:102:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../host_func.c:100:6: warning: variable ‘recvMsgSize’ set but not used [-Wunused-but-set-variable]
+../host_func.c: In function ‘handle_S_JOIN’:
+../host_func.c:138:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../host_func.c: In function ‘terminate_Connection’:
+../host_func.c:226:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+Finished building: ../host_func.c
+ 
+Building target: server
+Invoking: GCC C Linker
+gcc  -o "server"  ./host_func.o ./host_main.o ./low_Level_Func.o   
+Finished building target: server
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+Building file: ../clnt_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_func.d" -MT"clnt_func.d" -o "clnt_func.o" "../clnt_func.c"
+../clnt_func.c: In function ‘analyze_Response’:
+../clnt_func.c:242:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../clnt_func.c:252:3: warning: enumeration value ‘NOSTATE’ not handled in switch [-Wswitch]
+../clnt_func.c: In function ‘process_Response_Msg_Connection’:
+../clnt_func.c:314:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘request_Message_Connect_2_Server’:
+../clnt_func.c:448:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘tryToConnect’:
+../clnt_func.c:525:18: warning: initialization discards ‘const’ qualifier from pointer target type [enabled by default]
+../clnt_func.c: In function ‘recvList’:
+../clnt_func.c:379:8: warning: ‘tmpNick’ is used uninitialized in this function [-Wuninitialized]
+Finished building: ../clnt_func.c
+ 
+Building target: client
+Invoking: GCC C Linker
+gcc  -o "client"  ./clnt_func.o ./clnt_main.o ./low_Level_Func.o   
+Finished building target: client
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+Building file: ../host_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"host_func.d" -MT"host_func.d" -o "host_func.o" "../host_func.c"
+../host_func.c: In function ‘handleEvent_Host’:
+../host_func.c:65:5: warning: pointer targets in passing argument 3 of ‘accept’ differ in signedness [-Wpointer-sign]
+/usr/include/i386-linux-gnu/sys/socket.h:214:12: note: expected ‘socklen_t * __restrict__’ but argument is of type ‘int *’
+../host_func.c: In function ‘analyze_Message’:
+../host_func.c:102:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../host_func.c:100:6: warning: variable ‘recvMsgSize’ set but not used [-Wunused-but-set-variable]
+../host_func.c: In function ‘handle_S_JOIN’:
+../host_func.c:138:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../host_func.c: In function ‘terminate_Connection’:
+../host_func.c:224:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+Finished building: ../host_func.c
+ 
+Building file: ../host_main.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"host_main.d" -MT"host_main.d" -o "host_main.o" "../host_main.c"
+../host_main.c: In function ‘main’:
+../host_main.c:30:9: warning: implicit declaration of function ‘handleEvent_Host’ [-Wimplicit-function-declaration]
+Finished building: ../host_main.c
+ 
+Building target: server
+Invoking: GCC C Linker
+gcc  -o "server"  ./host_func.o ./host_main.o ./low_Level_Func.o   
+Finished building target: server
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+Building file: ../clnt_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_func.d" -MT"clnt_func.d" -o "clnt_func.o" "../clnt_func.c"
+../clnt_func.c: In function ‘analyze_Response’:
+../clnt_func.c:242:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../clnt_func.c:252:3: warning: enumeration value ‘NOSTATE’ not handled in switch [-Wswitch]
+../clnt_func.c: In function ‘process_Response_Msg_Connection’:
+../clnt_func.c:314:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘request_Message_Connect_2_Server’:
+../clnt_func.c:448:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘tryToConnect’:
+../clnt_func.c:525:18: warning: initialization discards ‘const’ qualifier from pointer target type [enabled by default]
+../clnt_func.c: In function ‘recvList’:
+../clnt_func.c:379:8: warning: ‘tmpNick’ is used uninitialized in this function [-Wuninitialized]
+Finished building: ../clnt_func.c
+ 
+Building target: client
+Invoking: GCC C Linker
+gcc  -o "client"  ./clnt_func.o ./clnt_main.o ./low_Level_Func.o   
+Finished building target: client
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+Building file: ../host_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"host_func.d" -MT"host_func.d" -o "host_func.o" "../host_func.c"
+../host_func.c: In function ‘handleEvent_Host’:
+../host_func.c:65:5: warning: pointer targets in passing argument 3 of ‘accept’ differ in signedness [-Wpointer-sign]
+/usr/include/i386-linux-gnu/sys/socket.h:214:12: note: expected ‘socklen_t * __restrict__’ but argument is of type ‘int *’
+../host_func.c: In function ‘analyze_Message’:
+../host_func.c:102:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../host_func.c:100:6: warning: variable ‘recvMsgSize’ set but not used [-Wunused-but-set-variable]
+../host_func.c: In function ‘handle_S_JOIN’:
+../host_func.c:138:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../host_func.c: In function ‘terminate_Connection’:
+../host_func.c:225:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+Finished building: ../host_func.c
+ 
+Building target: server
+Invoking: GCC C Linker
+gcc  -o "server"  ./host_func.o ./host_main.o ./low_Level_Func.o   
+Finished building target: server
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+Building file: ../clnt_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_func.d" -MT"clnt_func.d" -o "clnt_func.o" "../clnt_func.c"
+../clnt_func.c: In function ‘handleEvent_Connected’:
+../clnt_func.c:184:3: error: too few arguments to function ‘analyze_Response’
+../clnt_header.h:87:10: note: declared here
+../clnt_func.c:204:2: error: expected ‘;’ before ‘}’ token
+../clnt_func.c: In function ‘analyze_Response’:
+../clnt_func.c:245:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../clnt_func.c:255:3: warning: enumeration value ‘NOSTATE’ not handled in switch [-Wswitch]
+../clnt_func.c: In function ‘process_Response_Msg_Connection’:
+../clnt_func.c:317:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘request_Message_Connect_2_Server’:
+../clnt_func.c:451:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘tryToConnect’:
+../clnt_func.c:528:18: warning: initialization discards ‘const’ qualifier from pointer target type [enabled by default]
+make: *** [clnt_func.o] 오류 1
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+Building file: ../clnt_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_func.d" -MT"clnt_func.d" -o "clnt_func.o" "../clnt_func.c"
+../clnt_func.c: In function ‘handleEvent_Connected’:
+../clnt_func.c:204:2: error: expected ‘;’ before ‘}’ token
+../clnt_func.c: In function ‘analyze_Response’:
+../clnt_func.c:245:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../clnt_func.c:255:3: warning: enumeration value ‘NOSTATE’ not handled in switch [-Wswitch]
+../clnt_func.c: In function ‘process_Response_Msg_Connection’:
+../clnt_func.c:317:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘request_Message_Connect_2_Server’:
+../clnt_func.c:451:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘tryToConnect’:
+../clnt_func.c:528:18: warning: initialization discards ‘const’ qualifier from pointer target type [enabled by default]
+make: *** [clnt_func.o] 오류 1
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+Building file: ../clnt_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_func.d" -MT"clnt_func.d" -o "clnt_func.o" "../clnt_func.c"
+../clnt_func.c: In function ‘analyze_Response’:
+../clnt_func.c:245:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../clnt_func.c:255:3: warning: enumeration value ‘NOSTATE’ not handled in switch [-Wswitch]
+../clnt_func.c: In function ‘process_Response_Msg_Connection’:
+../clnt_func.c:317:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘request_Message_Connect_2_Server’:
+../clnt_func.c:451:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘tryToConnect’:
+../clnt_func.c:528:18: warning: initialization discards ‘const’ qualifier from pointer target type [enabled by default]
+../clnt_func.c: In function ‘recvList’:
+../clnt_func.c:382:8: warning: ‘tmpNick’ is used uninitialized in this function [-Wuninitialized]
+Finished building: ../clnt_func.c
+ 
+Building file: ../clnt_main.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_main.d" -MT"clnt_main.d" -o "clnt_main.o" "../clnt_main.c"
+Finished building: ../clnt_main.c
+ 
+Building target: client
+Invoking: GCC C Linker
+gcc  -o "client"  ./clnt_func.o ./clnt_main.o ./low_Level_Func.o   
+Finished building target: client
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+Building file: ../clnt_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_func.d" -MT"clnt_func.d" -o "clnt_func.o" "../clnt_func.c"
+../clnt_func.c: In function ‘connected_Prompt’:
+../clnt_func.c:51:19: error: ‘nickName’ undeclared (first use in this function)
+../clnt_func.c:51:19: note: each undeclared identifier is reported only once for each function it appears in
+../clnt_func.c: In function ‘handleEvent_Idle’:
+../clnt_func.c:105:11: error: ‘type’ undeclared (first use in this function)
+../clnt_func.c: In function ‘handleEvent_Connected’:
+../clnt_func.c:184:3: error: ‘type’ undeclared (first use in this function)
+../clnt_func.c:186:10: error: expected expression before ‘)’ token
+../clnt_func.c: In function ‘analyze_Response’:
+../clnt_func.c:249:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../clnt_func.c:259:3: warning: enumeration value ‘NOSTATE’ not handled in switch [-Wswitch]
+../clnt_func.c: In function ‘process_Response_Msg_Connection’:
+../clnt_func.c:321:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+../clnt_func.c:326:2: error: ‘type’ undeclared (first use in this function)
+../clnt_func.c:328:9: error: ‘nickName’ undeclared (first use in this function)
+../clnt_func.c: In function ‘process_Response_Msg_Disconnection’:
+../clnt_func.c:342:2: error: ‘type’ undeclared (first use in this function)
+../clnt_func.c: In function ‘process_Response_Msg_List’:
+../clnt_func.c:373:3: error: ‘type’ undeclared (first use in this function)
+../clnt_func.c: In function ‘request_Message_Connect_2_Server’:
+../clnt_func.c:455:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘tryToConnect’:
+../clnt_func.c:532:18: warning: initialization discards ‘const’ qualifier from pointer target type [enabled by default]
+make: *** [clnt_func.o] 오류 1
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+Building file: ../clnt_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_func.d" -MT"clnt_func.d" -o "clnt_func.o" "../clnt_func.c"
+../clnt_func.c: In function ‘handleEvent_Idle’:
+../clnt_func.c:105:11: error: ‘type’ undeclared (first use in this function)
+../clnt_func.c:105:11: note: each undeclared identifier is reported only once for each function it appears in
+../clnt_func.c: In function ‘handleEvent_Connected’:
+../clnt_func.c:184:3: error: ‘type’ undeclared (first use in this function)
+../clnt_func.c:186:10: error: expected expression before ‘)’ token
+../clnt_func.c: In function ‘analyze_Response’:
+../clnt_func.c:249:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../clnt_func.c:259:3: warning: enumeration value ‘NOSTATE’ not handled in switch [-Wswitch]
+../clnt_func.c: In function ‘process_Response_Msg_Connection’:
+../clnt_func.c:321:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘request_Message_Connect_2_Server’:
+../clnt_func.c:453:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘tryToConnect’:
+../clnt_func.c:530:18: warning: initialization discards ‘const’ qualifier from pointer target type [enabled by default]
+make: *** [clnt_func.o] 오류 1
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+Building file: ../clnt_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_func.d" -MT"clnt_func.d" -o "clnt_func.o" "../clnt_func.c"
+../clnt_func.c: In function ‘handleEvent_Idle’:
+../clnt_func.c:105:11: error: ‘type’ undeclared (first use in this function)
+../clnt_func.c:105:11: note: each undeclared identifier is reported only once for each function it appears in
+../clnt_func.c: In function ‘handleEvent_Connected’:
+../clnt_func.c:184:3: error: ‘type’ undeclared (first use in this function)
+../clnt_func.c:186:10: error: expected expression before ‘)’ token
+../clnt_func.c: In function ‘analyze_Response’:
+../clnt_func.c:248:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../clnt_func.c:258:3: warning: enumeration value ‘NOSTATE’ not handled in switch [-Wswitch]
+../clnt_func.c: In function ‘process_Response_Msg_Connection’:
+../clnt_func.c:320:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘request_Message_Connect_2_Server’:
+../clnt_func.c:452:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘tryToConnect’:
+../clnt_func.c:529:18: warning: initialization discards ‘const’ qualifier from pointer target type [enabled by default]
+make: *** [clnt_func.o] 오류 1
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+Building file: ../clnt_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_func.d" -MT"clnt_func.d" -o "clnt_func.o" "../clnt_func.c"
+../clnt_func.c: In function ‘handleEvent_Idle’:
+../clnt_func.c:105:11: error: ‘type’ undeclared (first use in this function)
+../clnt_func.c:105:11: note: each undeclared identifier is reported only once for each function it appears in
+../clnt_func.c:104:12: warning: unused variable ‘resType’ [-Wunused-variable]
+../clnt_func.c: In function ‘handleEvent_Connected’:
+../clnt_func.c:184:3: error: ‘type’ undeclared (first use in this function)
+../clnt_func.c:186:10: error: expected expression before ‘)’ token
+../clnt_func.c: In function ‘analyze_Response’:
+../clnt_func.c:248:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../clnt_func.c:258:3: warning: enumeration value ‘NOSTATE’ not handled in switch [-Wswitch]
+../clnt_func.c: In function ‘process_Response_Msg_Connection’:
+../clnt_func.c:320:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘request_Message_Connect_2_Server’:
+../clnt_func.c:452:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘tryToConnect’:
+../clnt_func.c:529:18: warning: initialization discards ‘const’ qualifier from pointer target type [enabled by default]
+make: *** [clnt_func.o] 오류 1
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+Building file: ../clnt_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_func.d" -MT"clnt_func.d" -o "clnt_func.o" "../clnt_func.c"
+../clnt_func.c: In function ‘handleEvent_Connected’:
+../clnt_func.c:182:3: error: ‘type’ undeclared (first use in this function)
+../clnt_func.c:182:3: note: each undeclared identifier is reported only once for each function it appears in
+../clnt_func.c:184:10: error: expected expression before ‘)’ token
+../clnt_func.c: In function ‘analyze_Response’:
+../clnt_func.c:246:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘process_Response_Msg_Connection’:
+../clnt_func.c:318:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘request_Message_Connect_2_Server’:
+../clnt_func.c:450:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘tryToConnect’:
+../clnt_func.c:527:18: warning: initialization discards ‘const’ qualifier from pointer target type [enabled by default]
+make: *** [clnt_func.o] 오류 1
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+Building file: ../clnt_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_func.d" -MT"clnt_func.d" -o "clnt_func.o" "../clnt_func.c"
+../clnt_func.c: In function ‘handleEvent_Connected’:
+../clnt_func.c:182:3: error: ‘type’ undeclared (first use in this function)
+../clnt_func.c:182:3: note: each undeclared identifier is reported only once for each function it appears in
+../clnt_func.c:184:10: error: expected expression before ‘)’ token
+../clnt_func.c: In function ‘analyze_Response’:
+../clnt_func.c:246:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../clnt_func.c: At top level:
+../clnt_func.c:313:6: error: conflicting types for ‘process_Response_Msg_Connection’
+../clnt_header.h:109:7: note: previous declaration of ‘process_Response_Msg_Connection’ was here
+../clnt_func.c: In function ‘process_Response_Msg_Connection’:
+../clnt_func.c:318:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+../clnt_func.c: At top level:
+../clnt_func.c:327:6: error: conflicting types for ‘process_Response_Msg_Disconnection’
+../clnt_header.h:111:7: note: previous declaration of ‘process_Response_Msg_Disconnection’ was here
+../clnt_func.c:345:6: error: conflicting types for ‘process_Response_Msg_List’
+../clnt_header.h:110:7: note: previous declaration of ‘process_Response_Msg_List’ was here
+../clnt_func.c: In function ‘request_Message_Connect_2_Server’:
+../clnt_func.c:450:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘tryToConnect’:
+../clnt_func.c:527:18: warning: initialization discards ‘const’ qualifier from pointer target type [enabled by default]
+make: *** [clnt_func.o] 오류 1
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+Building file: ../clnt_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_func.d" -MT"clnt_func.d" -o "clnt_func.o" "../clnt_func.c"
+../clnt_func.c: In function ‘handleEvent_Connected’:
+../clnt_func.c:182:3: error: ‘type’ undeclared (first use in this function)
+../clnt_func.c:182:3: note: each undeclared identifier is reported only once for each function it appears in
+../clnt_func.c:184:10: error: expected expression before ‘)’ token
+../clnt_func.c: In function ‘analyze_Response’:
+../clnt_func.c:246:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘process_Response_Msg_Connection’:
+../clnt_func.c:318:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘process_Response_Msg_List’:
+../clnt_func.c:368:10: error: expected expression before ‘=’ token
+../clnt_func.c: In function ‘request_Message_Connect_2_Server’:
+../clnt_func.c:448:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘tryToConnect’:
+../clnt_func.c:525:18: warning: initialization discards ‘const’ qualifier from pointer target type [enabled by default]
+../clnt_func.c: In function ‘process_Response_Msg_List’:
+../clnt_func.c:370:1: warning: control reaches end of non-void function [-Wreturn-type]
+make: *** [clnt_func.o] 오류 1
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+Building file: ../clnt_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_func.d" -MT"clnt_func.d" -o "clnt_func.o" "../clnt_func.c"
+../clnt_func.c: In function ‘handleEvent_Connected’:
+../clnt_func.c:182:3: error: ‘type’ undeclared (first use in this function)
+../clnt_func.c:182:3: note: each undeclared identifier is reported only once for each function it appears in
+../clnt_func.c:184:10: error: expected expression before ‘)’ token
+../clnt_func.c: In function ‘analyze_Response’:
+../clnt_func.c:246:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘process_Response_Msg_Connection’:
+../clnt_func.c:318:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘request_Message_Connect_2_Server’:
+../clnt_func.c:448:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘tryToConnect’:
+../clnt_func.c:525:18: warning: initialization discards ‘const’ qualifier from pointer target type [enabled by default]
+../clnt_func.c: In function ‘process_Response_Msg_List’:
+../clnt_func.c:370:1: warning: control reaches end of non-void function [-Wreturn-type]
+make: *** [clnt_func.o] 오류 1
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+Building file: ../clnt_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_func.d" -MT"clnt_func.d" -o "clnt_func.o" "../clnt_func.c"
+../clnt_func.c: In function ‘analyze_Response’:
+../clnt_func.c:254:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘process_Response_Msg_Connection’:
+../clnt_func.c:326:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘request_Message_Connect_2_Server’:
+../clnt_func.c:456:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘tryToConnect’:
+../clnt_func.c:533:18: warning: initialization discards ‘const’ qualifier from pointer target type [enabled by default]
+../clnt_func.c: In function ‘process_Response_Msg_List’:
+../clnt_func.c:378:1: warning: control reaches end of non-void function [-Wreturn-type]
+../clnt_func.c: In function ‘recvList’:
+../clnt_func.c:387:8: warning: ‘tmpNick’ is used uninitialized in this function [-Wuninitialized]
+Finished building: ../clnt_func.c
+ 
+Building file: ../clnt_main.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_main.d" -MT"clnt_main.d" -o "clnt_main.o" "../clnt_main.c"
+Finished building: ../clnt_main.c
+ 
+Building target: client
+Invoking: GCC C Linker
+gcc  -o "client"  ./clnt_func.o ./clnt_main.o ./low_Level_Func.o   
+Finished building target: client
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+Building file: ../clnt_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_func.d" -MT"clnt_func.d" -o "clnt_func.o" "../clnt_func.c"
+../clnt_func.c: In function ‘handleEvent_Connected’:
+../clnt_func.c:189:52: error: called object ‘process_Response_Msg_Disconnection()’ is not a function
+../clnt_func.c: In function ‘analyze_Response’:
+../clnt_func.c:257:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘process_Response_Msg_Connection’:
+../clnt_func.c:327:2: warning: implicit declaration of function ‘disable_Sock_Send’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘request_Message_Connect_2_Server’:
+../clnt_func.c:450:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘quitProgram’:
+../clnt_func.c:483:3: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+../clnt_func.c: At top level:
+../clnt_func.c:519:6: warning: conflicting types for ‘disable_Sock_Send’ [enabled by default]
+../clnt_func.c:327:2: note: previous implicit declaration of ‘disable_Sock_Send’ was here
+../clnt_func.c: In function ‘tryToConnect’:
+../clnt_func.c:533:18: warning: initialization discards ‘const’ qualifier from pointer target type [enabled by default]
+../clnt_func.c: In function ‘process_Response_Msg_List’:
+../clnt_func.c:372:1: warning: control reaches end of non-void function [-Wreturn-type]
+make: *** [clnt_func.o] 오류 1
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+Building file: ../clnt_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_func.d" -MT"clnt_func.d" -o "clnt_func.o" "../clnt_func.c"
+../clnt_func.c: In function ‘handleEvent_Connected’:
+../clnt_func.c:189:52: error: called object ‘process_Response_Msg_Disconnection()’ is not a function
+../clnt_func.c: In function ‘analyze_Response’:
+../clnt_func.c:257:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘process_Response_Msg_Connection’:
+../clnt_func.c:327:2: warning: implicit declaration of function ‘disable_Sock_Send’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘request_Message_Connect_2_Server’:
+../clnt_func.c:450:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘quitProgram’:
+../clnt_func.c:483:3: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+../clnt_func.c: At top level:
+../clnt_func.c:519:6: warning: conflicting types for ‘disable_Sock_Send’ [enabled by default]
+../clnt_func.c:327:2: note: previous implicit declaration of ‘disable_Sock_Send’ was here
+../clnt_func.c: In function ‘tryToConnect’:
+../clnt_func.c:533:18: warning: initialization discards ‘const’ qualifier from pointer target type [enabled by default]
+../clnt_func.c: In function ‘process_Response_Msg_List’:
+../clnt_func.c:372:1: warning: control reaches end of non-void function [-Wreturn-type]
+make: *** [clnt_func.o] 오류 1
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+Building file: ../clnt_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_func.d" -MT"clnt_func.d" -o "clnt_func.o" "../clnt_func.c"
+../clnt_func.c: In function ‘analyze_Response’:
+../clnt_func.c:257:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘process_Response_Msg_Connection’:
+../clnt_func.c:327:2: warning: implicit declaration of function ‘disable_Sock_Send’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘request_Message_Connect_2_Server’:
+../clnt_func.c:450:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘quitProgram’:
+../clnt_func.c:483:3: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+../clnt_func.c: At top level:
+../clnt_func.c:519:6: warning: conflicting types for ‘disable_Sock_Send’ [enabled by default]
+../clnt_func.c:327:2: note: previous implicit declaration of ‘disable_Sock_Send’ was here
+../clnt_func.c: In function ‘tryToConnect’:
+../clnt_func.c:533:18: warning: initialization discards ‘const’ qualifier from pointer target type [enabled by default]
+Finished building: ../clnt_func.c
+../clnt_func.c: In function ‘process_Response_Msg_List’:
+ 
+../clnt_func.c:372:1: warning: control reaches end of non-void function [-Wreturn-type]
+Building target: client
+../clnt_func.c: In function ‘recvList’:
+../clnt_func.c:381:8: warning: ‘tmpNick’ is used uninitialized in this function [-Wuninitialized]
+Invoking: GCC C Linker
+gcc  -o "client"  ./clnt_func.o ./clnt_main.o ./low_Level_Func.o   
+Finished building target: client
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+Building file: ../clnt_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_func.d" -MT"clnt_func.d" -o "clnt_func.o" "../clnt_func.c"
+../clnt_func.c: In function ‘analyze_Response’:
+../clnt_func.c:257:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘process_Response_Msg_Connection’:
+../clnt_func.c:327:2: warning: implicit declaration of function ‘disable_Sock_Send’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘request_Message_Connect_2_Server’:
+../clnt_func.c:452:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘quitProgram’:
+../clnt_func.c:485:3: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+../clnt_func.c: At top level:
+../clnt_func.c:521:6: warning: conflicting types for ‘disable_Sock_Send’ [enabled by default]
+../clnt_func.c:327:2: note: previous implicit declaration of ‘disable_Sock_Send’ was here
+Finished building: ../clnt_func.c
+../clnt_func.c: In function ‘tryToConnect’:
+ 
+../clnt_func.c:535:18: warning: initialization discards ‘const’ qualifier from pointer target type [enabled by default]
+Building target: client
+Invoking: GCC C Linker
+gcc  -o "client"  ./clnt_func.o ./clnt_main.o ./low_Level_Func.o   
+../clnt_func.c: In function ‘process_Response_Msg_List’:
+../clnt_func.c:374:1: warning: control reaches end of non-void function [-Wreturn-type]
+../clnt_func.c: In function ‘recvList’:
+../clnt_func.c:383:8: warning: ‘tmpNick’ is used uninitialized in this function [-Wuninitialized]
+Finished building target: client
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+Building file: ../clnt_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_func.d" -MT"clnt_func.d" -o "clnt_func.o" "../clnt_func.c"
+../clnt_func.c: In function ‘analyze_Response’:
+../clnt_func.c:257:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../clnt_func.c:270:3: warning: enumeration value ‘END’ not handled in switch [-Wswitch]
+../clnt_func.c: In function ‘request_Message_Connect_2_Server’:
+../clnt_func.c:455:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘quitProgram’:
+../clnt_func.c:488:3: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘tryToConnect’:
+../clnt_func.c:538:18: warning: initialization discards ‘const’ qualifier from pointer target type [enabled by default]
+../clnt_func.c: In function ‘process_Response_Msg_List’:
+../clnt_func.c:377:1: warning: control reaches end of non-void function [-Wreturn-type]
+Finished building: ../clnt_func.c
+../clnt_func.c: In function ‘recvList’:
+../clnt_func.c:386:8: warning: ‘tmpNick’ is used uninitialized in this function [-Wuninitialized]
+ 
+Building file: ../clnt_main.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_main.d" -MT"clnt_main.d" -o "clnt_main.o" "../clnt_main.c"
+Finished building: ../clnt_main.c
+ 
+Building target: client
+Invoking: GCC C Linker
+gcc  -o "client"  ./clnt_func.o ./clnt_main.o ./low_Level_Func.o   
+Finished building target: client
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+Building file: ../clnt_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_func.d" -MT"clnt_func.d" -o "clnt_func.o" "../clnt_func.c"
+../clnt_func.c: In function ‘analyze_Response’:
+../clnt_func.c:260:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../clnt_func.c:273:3: warning: enumeration value ‘END’ not handled in switch [-Wswitch]
+../clnt_func.c: In function ‘request_Message_Connect_2_Server’:
+../clnt_func.c:455:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘quitProgram’:
+../clnt_func.c:488:3: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘tryToConnect’:
+../clnt_func.c:538:18: warning: initialization discards ‘const’ qualifier from pointer target type [enabled by default]
+../clnt_func.c: In function ‘process_Response_Msg_List’:
+../clnt_func.c:377:1: warning: control reaches end of non-void function [-Wreturn-type]
+Finished building: ../clnt_func.c
+../clnt_func.c: In function ‘recvList’:
+../clnt_func.c:386:8: warning: ‘tmpNick’ is used uninitialized in this function [-Wuninitialized]
+ 
+Building file: ../clnt_main.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_main.d" -MT"clnt_main.d" -o "clnt_main.o" "../clnt_main.c"
+Finished building: ../clnt_main.c
+ 
+Building target: client
+Invoking: GCC C Linker
+gcc  -o "client"  ./clnt_func.o ./clnt_main.o ./low_Level_Func.o   
+Finished building target: client
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+Building file: ../clnt_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_func.d" -MT"clnt_func.d" -o "clnt_func.o" "../clnt_func.c"
+../clnt_func.c: In function ‘analyze_Response’:
+../clnt_func.c:284:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../clnt_func.c:297:3: warning: enumeration value ‘END’ not handled in switch [-Wswitch]
+../clnt_func.c: In function ‘request_Message_Connect_2_Server’:
+../clnt_func.c:424:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘quitProgram’:
+../clnt_func.c:457:3: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘tryToConnect’:
+../clnt_func.c:507:18: warning: initialization discards ‘const’ qualifier from pointer target type [enabled by default]
+../clnt_func.c: In function ‘process_Response_Msg_List’:
+../clnt_func.c:346:1: warning: control reaches end of non-void function [-Wreturn-type]
+Finished building: ../clnt_func.c
+../clnt_func.c: In function ‘recvList’:
+../clnt_func.c:355:8: warning: ‘tmpNick’ is used uninitialized in this function [-Wuninitialized]
+ 
+Building target: client
+Invoking: GCC C Linker
+gcc  -o "client"  ./clnt_func.o ./clnt_main.o ./low_Level_Func.o   
+Finished building target: client
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+Building file: ../clnt_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_func.d" -MT"clnt_func.d" -o "clnt_func.o" "../clnt_func.c"
+../clnt_func.c: In function ‘analyze_Response’:
+../clnt_func.c:285:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../clnt_func.c:298:3: warning: enumeration value ‘END’ not handled in switch [-Wswitch]
+../clnt_func.c: In function ‘request_Message_Connect_2_Server’:
+../clnt_func.c:438:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘quitProgram’:
+../clnt_func.c:471:3: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘tryToConnect’:
+../clnt_func.c:521:18: warning: initialization discards ‘const’ qualifier from pointer target type [enabled by default]
+../clnt_func.c: In function ‘recvList’:
+../clnt_func.c:369:8: warning: ‘tmpNick’ is used uninitialized in this function [-Wuninitialized]
+Finished building: ../clnt_func.c
+ 
+Building target: client
+Invoking: GCC C Linker
+gcc  -o "client"  ./clnt_func.o ./clnt_main.o ./low_Level_Func.o   
+Finished building target: client
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+Building file: ../clnt_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_func.d" -MT"clnt_func.d" -o "clnt_func.o" "../clnt_func.c"
+../clnt_func.c: In function ‘analyze_Response’:
+../clnt_func.c:285:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../clnt_func.c:298:3: warning: enumeration value ‘END’ not handled in switch [-Wswitch]
+../clnt_func.c: In function ‘request_Message_Connect_2_Server’:
+../clnt_func.c:437:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘quitProgram’:
+../clnt_func.c:470:3: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘tryToConnect’:
+../clnt_func.c:520:18: warning: initialization discards ‘const’ qualifier from pointer target type [enabled by default]
+Finished building: ../clnt_func.c
+ 
+Building target: client
+Invoking: GCC C Linker
+gcc  -o "client"  ./clnt_func.o ./clnt_main.o ./low_Level_Func.o   
+Finished building target: client
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+Building file: ../host_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"host_func.d" -MT"host_func.d" -o "host_func.o" "../host_func.c"
+../host_func.c: In function ‘handleEvent_Host’:
+../host_func.c:65:5: warning: pointer targets in passing argument 3 of ‘accept’ differ in signedness [-Wpointer-sign]
+/usr/include/i386-linux-gnu/sys/socket.h:214:12: note: expected ‘socklen_t * __restrict__’ but argument is of type ‘int *’
+../host_func.c: In function ‘analyze_Message’:
+../host_func.c:102:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../host_func.c:100:6: warning: variable ‘recvMsgSize’ set but not used [-Wunused-but-set-variable]
+../host_func.c: In function ‘handle_S_JOIN’:
+../host_func.c:138:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../host_func.c: In function ‘terminate_Connection’:
+../host_func.c:233:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+Finished building: ../host_func.c
+ 
+Building target: server
+Invoking: GCC C Linker
+gcc  -o "server"  ./host_func.o ./host_main.o ./low_Level_Func.o   
+Finished building target: server
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+Building file: ../host_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"host_func.d" -MT"host_func.d" -o "host_func.o" "../host_func.c"
+../host_func.c: In function ‘handleEvent_Host’:
+../host_func.c:65:5: warning: pointer targets in passing argument 3 of ‘accept’ differ in signedness [-Wpointer-sign]
+/usr/include/i386-linux-gnu/sys/socket.h:214:12: note: expected ‘socklen_t * __restrict__’ but argument is of type ‘int *’
+../host_func.c: In function ‘analyze_Message’:
+../host_func.c:102:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../host_func.c:100:6: warning: variable ‘recvMsgSize’ set but not used [-Wunused-but-set-variable]
+../host_func.c: In function ‘handle_S_JOIN’:
+../host_func.c:138:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../host_func.c: In function ‘handle_S_LIST’:
+../host_func.c:190:2: error: too few arguments to function ‘itoa’
+../low_Level_Header.h:15:7: note: declared here
+../host_func.c: In function ‘terminate_Connection’:
+../host_func.c:233:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+make: *** [host_func.o] 오류 1
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+Building file: ../host_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"host_func.d" -MT"host_func.d" -o "host_func.o" "../host_func.c"
+../host_func.c: In function ‘handleEvent_Host’:
+../host_func.c:65:5: warning: pointer targets in passing argument 3 of ‘accept’ differ in signedness [-Wpointer-sign]
+/usr/include/i386-linux-gnu/sys/socket.h:214:12: note: expected ‘socklen_t * __restrict__’ but argument is of type ‘int *’
+../host_func.c: In function ‘analyze_Message’:
+../host_func.c:102:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../host_func.c:100:6: warning: variable ‘recvMsgSize’ set but not used [-Wunused-but-set-variable]
+../host_func.c: In function ‘handle_S_JOIN’:
+../host_func.c:138:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../host_func.c: In function ‘terminate_Connection’:
+../host_func.c:233:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+Finished building: ../host_func.c
+ 
+Building target: server
+Invoking: GCC C Linker
+gcc  -o "server"  ./host_func.o ./host_main.o ./low_Level_Func.o   
+Finished building target: server
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+Building file: ../host_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"host_func.d" -MT"host_func.d" -o "host_func.o" "../host_func.c"
+../host_func.c: In function ‘handleEvent_Host’:
+../host_func.c:65:5: warning: pointer targets in passing argument 3 of ‘accept’ differ in signedness [-Wpointer-sign]
+/usr/include/i386-linux-gnu/sys/socket.h:214:12: note: expected ‘socklen_t * __restrict__’ but argument is of type ‘int *’
+../host_func.c: In function ‘analyze_Message’:
+../host_func.c:102:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../host_func.c:100:6: warning: variable ‘recvMsgSize’ set but not used [-Wunused-but-set-variable]
+../host_func.c: In function ‘handle_S_JOIN’:
+../host_func.c:138:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../host_func.c: In function ‘terminate_Connection’:
+../host_func.c:230:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+Finished building: ../host_func.c
+ 
+Building target: server
+Invoking: GCC C Linker
+gcc  -o "server"  ./host_func.o ./host_main.o ./low_Level_Func.o   
+Finished building target: server
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+Building file: ../clnt_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_func.d" -MT"clnt_func.d" -o "clnt_func.o" "../clnt_func.c"
+../clnt_func.c: In function ‘analyze_Response’:
+../clnt_func.c:285:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../clnt_func.c:298:3: warning: enumeration value ‘END’ not handled in switch [-Wswitch]
+../clnt_func.c: In function ‘request_Message_Connect_2_Server’:
+../clnt_func.c:437:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘quitProgram’:
+../clnt_func.c:470:3: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+Finished building: ../clnt_func.c
+ 
+Building file: ../clnt_main.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_main.d" -MT"clnt_main.d" -o "clnt_main.o" "../clnt_main.c"
+Finished building: ../clnt_main.c
+ 
+Building target: client
+Invoking: GCC C Linker
+gcc  -o "client"  ./clnt_func.o ./clnt_main.o ./low_Level_Func.o   
+Finished building target: client
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+Building file: ../host_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"host_func.d" -MT"host_func.d" -o "host_func.o" "../host_func.c"
+../host_func.c: In function ‘handleEvent_Host’:
+../host_func.c:65:5: warning: pointer targets in passing argument 3 of ‘accept’ differ in signedness [-Wpointer-sign]
+/usr/include/i386-linux-gnu/sys/socket.h:214:12: note: expected ‘socklen_t * __restrict__’ but argument is of type ‘int *’
+../host_func.c: In function ‘analyze_Message’:
+../host_func.c:102:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../host_func.c:100:6: warning: variable ‘recvMsgSize’ set but not used [-Wunused-but-set-variable]
+../host_func.c: In function ‘handle_S_JOIN’:
+../host_func.c:138:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../host_func.c: In function ‘terminate_Connection’:
+../host_func.c:232:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+Finished building: ../host_func.c
+ 
+Building target: server
+Invoking: GCC C Linker
+gcc  -o "server"  ./host_func.o ./host_main.o ./low_Level_Func.o   
+Finished building target: server
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+Building file: ../host_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"host_func.d" -MT"host_func.d" -o "host_func.o" "../host_func.c"
+../host_func.c: In function ‘handleEvent_Host’:
+../host_func.c:65:5: warning: pointer targets in passing argument 3 of ‘accept’ differ in signedness [-Wpointer-sign]
+/usr/include/i386-linux-gnu/sys/socket.h:214:12: note: expected ‘socklen_t * __restrict__’ but argument is of type ‘int *’
+../host_func.c: In function ‘analyze_Message’:
+../host_func.c:102:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../host_func.c:100:6: warning: variable ‘recvMsgSize’ set but not used [-Wunused-but-set-variable]
+../host_func.c: In function ‘handle_S_JOIN’:
+../host_func.c:138:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../host_func.c: In function ‘terminate_Connection’:
+Finished building: ../host_func.c
+ 
+../host_func.c:232:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+Building target: server
+Invoking: GCC C Linker
+gcc  -o "server"  ./host_func.o ./host_main.o ./low_Level_Func.o   
+Finished building target: server
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+Building file: ../clnt_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_func.d" -MT"clnt_func.d" -o "clnt_func.o" "../clnt_func.c"
+../clnt_func.c: In function ‘analyze_Response’:
+../clnt_func.c:285:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../clnt_func.c:298:3: warning: enumeration value ‘END’ not handled in switch [-Wswitch]
+../clnt_func.c: In function ‘request_Message_Connect_2_Server’:
+../clnt_func.c:437:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘quitProgram’:
+../clnt_func.c:470:3: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+Finished building: ../clnt_func.c
+ 
+Building target: client
+Invoking: GCC C Linker
+gcc  -o "client"  ./clnt_func.o ./clnt_main.o ./low_Level_Func.o   
+Finished building target: client
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+Building file: ../clnt_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_func.d" -MT"clnt_func.d" -o "clnt_func.o" "../clnt_func.c"
+../clnt_func.c: In function ‘analyze_Response’:
+../clnt_func.c:285:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../clnt_func.c:298:3: warning: enumeration value ‘END’ not handled in switch [-Wswitch]
+../clnt_func.c: In function ‘request_Message_Connect_2_Server’:
+../clnt_func.c:437:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘quitProgram’:
+../clnt_func.c:470:3: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+Finished building: ../clnt_func.c
+ 
+Building target: client
+Invoking: GCC C Linker
+gcc  -o "client"  ./clnt_func.o ./clnt_main.o ./low_Level_Func.o   
+Finished building target: client
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+Building file: ../host_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"host_func.d" -MT"host_func.d" -o "host_func.o" "../host_func.c"
+../host_func.c: In function ‘handleEvent_Host’:
+../host_func.c:65:5: warning: pointer targets in passing argument 3 of ‘accept’ differ in signedness [-Wpointer-sign]
+/usr/include/i386-linux-gnu/sys/socket.h:214:12: note: expected ‘socklen_t * __restrict__’ but argument is of type ‘int *’
+../host_func.c: In function ‘analyze_Message’:
+../host_func.c:102:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../host_func.c:100:6: warning: variable ‘recvMsgSize’ set but not used [-Wunused-but-set-variable]
+../host_func.c: In function ‘handle_S_JOIN’:
+../host_func.c:138:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../host_func.c: In function ‘terminate_Connection’:
+../host_func.c:234:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+Finished building: ../host_func.c
+ 
+Building target: server
+Invoking: GCC C Linker
+gcc  -o "server"  ./host_func.o ./host_main.o ./low_Level_Func.o   
+Finished building target: server
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+Building file: ../clnt_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_func.d" -MT"clnt_func.d" -o "clnt_func.o" "../clnt_func.c"
+../clnt_func.c: In function ‘analyze_Response’:
+../clnt_func.c:284:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../clnt_func.c:297:3: warning: enumeration value ‘END’ not handled in switch [-Wswitch]
+../clnt_func.c: In function ‘request_Message_Connect_2_Server’:
+../clnt_func.c:436:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘quitProgram’:
+../clnt_func.c:469:3: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+Finished building: ../clnt_func.c
+ 
+Building target: client
+Invoking: GCC C Linker
+gcc  -o "client"  ./clnt_func.o ./clnt_main.o ./low_Level_Func.o   
+Finished building target: client
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+Building file: ../clnt_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_func.d" -MT"clnt_func.d" -o "clnt_func.o" "../clnt_func.c"
+../clnt_func.c: In function ‘analyze_Response’:
+../clnt_func.c:280:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../clnt_func.c:293:3: warning: enumeration value ‘END’ not handled in switch [-Wswitch]
+../clnt_func.c: In function ‘request_Message_Connect_2_Server’:
+../clnt_func.c:432:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘quitProgram’:
+../clnt_func.c:465:3: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+Finished building: ../clnt_func.c
+ 
+Building file: ../clnt_main.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_main.d" -MT"clnt_main.d" -o "clnt_main.o" "../clnt_main.c"
+Finished building: ../clnt_main.c
+ 
+Building target: client
+Invoking: GCC C Linker
+gcc  -o "client"  ./clnt_func.o ./clnt_main.o ./low_Level_Func.o   
+Finished building target: client
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+Building file: ../clnt_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_func.d" -MT"clnt_func.d" -o "clnt_func.o" "../clnt_func.c"
+../clnt_func.c: In function ‘analyze_Response’:
+../clnt_func.c:283:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../clnt_func.c:296:3: warning: enumeration value ‘OK_MSG’ not handled in switch [-Wswitch]
+../clnt_func.c:296:3: warning: enumeration value ‘END’ not handled in switch [-Wswitch]
+../clnt_func.c: In function ‘request_Message_Connect_2_Server’:
+../clnt_func.c:435:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘quitProgram’:
+../clnt_func.c:468:3: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+Finished building: ../clnt_func.c
+ 
+Building file: ../clnt_main.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_main.d" -MT"clnt_main.d" -o "clnt_main.o" "../clnt_main.c"
+Finished building: ../clnt_main.c
+ 
+Building target: client
+Invoking: GCC C Linker
+gcc  -o "client"  ./clnt_func.o ./clnt_main.o ./low_Level_Func.o   
+Finished building target: client
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+Building file: ../host_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"host_func.d" -MT"host_func.d" -o "host_func.o" "../host_func.c"
+../host_func.c: In function ‘handleEvent_Host’:
+../host_func.c:65:5: warning: pointer targets in passing argument 3 of ‘accept’ differ in signedness [-Wpointer-sign]
+/usr/include/i386-linux-gnu/sys/socket.h:214:12: note: expected ‘socklen_t * __restrict__’ but argument is of type ‘int *’
+../host_func.c: In function ‘analyze_Message’:
+../host_func.c:102:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../host_func.c:100:6: warning: variable ‘recvMsgSize’ set but not used [-Wunused-but-set-variable]
+../host_func.c: In function ‘handle_S_JOIN’:
+../host_func.c:141:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../host_func.c: In function ‘terminate_Connection’:
+../host_func.c:237:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+Finished building: ../host_func.c
+ 
+Building file: ../host_main.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"host_main.d" -MT"host_main.d" -o "host_main.o" "../host_main.c"
+../host_main.c: In function ‘main’:
+../host_main.c:31:9: warning: implicit declaration of function ‘handleEvent_Host’ [-Wimplicit-function-declaration]
+Finished building: ../host_main.c
+ 
+Building target: server
+Invoking: GCC C Linker
+gcc  -o "server"  ./host_func.o ./host_main.o ./low_Level_Func.o   
+Finished building target: server
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+Building file: ../host_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"host_func.d" -MT"host_func.d" -o "host_func.o" "../host_func.c"
+../host_func.c: In function ‘handleEvent_Host’:
+../host_func.c:72:5: warning: pointer targets in passing argument 3 of ‘accept’ differ in signedness [-Wpointer-sign]
+/usr/include/i386-linux-gnu/sys/socket.h:214:12: note: expected ‘socklen_t * __restrict__’ but argument is of type ‘int *’
+../host_func.c: In function ‘analyze_Message’:
+../host_func.c:109:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../host_func.c:107:6: warning: variable ‘recvMsgSize’ set but not used [-Wunused-but-set-variable]
+../host_func.c: In function ‘handle_S_JOIN’:
+../host_func.c:148:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../host_func.c: In function ‘terminate_Connection’:
+../host_func.c:244:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+Finished building: ../host_func.c
+ 
+Building target: server
+Invoking: GCC C Linker
+gcc  -o "server"  ./host_func.o ./host_main.o ./low_Level_Func.o   
+Finished building target: server
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+Building file: ../clnt_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_func.d" -MT"clnt_func.d" -o "clnt_func.o" "../clnt_func.c"
+../clnt_func.c: In function ‘analyze_Response’:
+../clnt_func.c:283:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../clnt_func.c:296:3: warning: enumeration value ‘OK_MSG’ not handled in switch [-Wswitch]
+../clnt_func.c:296:3: warning: enumeration value ‘END’ not handled in switch [-Wswitch]
+../clnt_func.c: In function ‘request_Message_Connect_2_Server’:
+../clnt_func.c:435:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘quitProgram’:
+../clnt_func.c:468:3: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+Finished building: ../clnt_func.c
+ 
+Building target: client
+Invoking: GCC C Linker
+gcc  -o "client"  ./clnt_func.o ./clnt_main.o ./low_Level_Func.o   
+Finished building target: client
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+Building file: ../host_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"host_func.d" -MT"host_func.d" -o "host_func.o" "../host_func.c"
+../host_func.c: In function ‘handleEvent_Host’:
+../host_func.c:72:5: warning: pointer targets in passing argument 3 of ‘accept’ differ in signedness [-Wpointer-sign]
+/usr/include/i386-linux-gnu/sys/socket.h:214:12: note: expected ‘socklen_t * __restrict__’ but argument is of type ‘int *’
+../host_func.c: In function ‘analyze_Message’:
+../host_func.c:109:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../host_func.c:107:6: warning: variable ‘recvMsgSize’ set but not used [-Wunused-but-set-variable]
+../host_func.c: In function ‘handle_S_JOIN’:
+../host_func.c:147:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../host_func.c: In function ‘terminate_Connection’:
+../host_func.c:246:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+Finished building: ../host_func.c
+ 
+Building file: ../host_main.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"host_main.d" -MT"host_main.d" -o "host_main.o" "../host_main.c"
+../host_main.c: In function ‘main’:
+../host_main.c:31:9: warning: implicit declaration of function ‘handleEvent_Host’ [-Wimplicit-function-declaration]
+Finished building: ../host_main.c
+ 
+Building target: server
+Invoking: GCC C Linker
+gcc  -o "server"  ./host_func.o ./host_main.o ./low_Level_Func.o   
+Finished building target: server
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+Building file: ../clnt_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_func.d" -MT"clnt_func.d" -o "clnt_func.o" "../clnt_func.c"
+../clnt_func.c: In function ‘handleEvent_Connected’:
+../clnt_func.c:186:16: error: ‘process_’ undeclared (first use in this function)
+../clnt_func.c:186:16: note: each undeclared identifier is reported only once for each function it appears in
+../clnt_func.c:187:4: error: expected ‘;’ before ‘break’
+../clnt_func.c: In function ‘analyze_Response’:
+../clnt_func.c:284:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../clnt_func.c:297:3: warning: enumeration value ‘END’ not handled in switch [-Wswitch]
+../clnt_func.c: In function ‘request_Message_Connect_2_Server’:
+../clnt_func.c:439:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘quitProgram’:
+../clnt_func.c:472:3: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+make: *** [clnt_func.o] 오류 1
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+Building file: ../clnt_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_func.d" -MT"clnt_func.d" -o "clnt_func.o" "../clnt_func.c"
+../clnt_func.c: In function ‘handleEvent_Connected’:
+../clnt_func.c:186:16: error: ‘process_’ undeclared (first use in this function)
+../clnt_func.c:186:16: note: each undeclared identifier is reported only once for each function it appears in
+../clnt_func.c:187:4: error: expected ‘;’ before ‘break’
+../clnt_func.c: In function ‘analyze_Response’:
+../clnt_func.c:284:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../clnt_func.c:297:3: warning: enumeration value ‘END’ not handled in switch [-Wswitch]
+../clnt_func.c: In function ‘request_Message_Connect_2_Server’:
+../clnt_func.c:439:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘quitProgram’:
+../clnt_func.c:472:3: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+make: *** [clnt_func.o] 오류 1
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+Building file: ../clnt_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_func.d" -MT"clnt_func.d" -o "clnt_func.o" "../clnt_func.c"
+../clnt_func.c: In function ‘handleEvent_Connected’:
+../clnt_func.c:178:16: error: ‘process_’ undeclared (first use in this function)
+../clnt_func.c:178:16: note: each undeclared identifier is reported only once for each function it appears in
+../clnt_func.c:179:4: error: expected ‘;’ before ‘break’
+../clnt_func.c: In function ‘analyze_Response’:
+../clnt_func.c:276:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../clnt_func.c:289:3: warning: enumeration value ‘END’ not handled in switch [-Wswitch]
+../clnt_func.c: In function ‘request_Message_Connect_2_Server’:
+../clnt_func.c:431:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘quitProgram’:
+../clnt_func.c:464:3: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+make: *** [clnt_func.o] 오류 1
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+Building file: ../clnt_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_func.d" -MT"clnt_func.d" -o "clnt_func.o" "../clnt_func.c"
+../clnt_func.c: In function ‘handleEvent_Connected’:
+../clnt_func.c:178:16: error: ‘process_’ undeclared (first use in this function)
+../clnt_func.c:178:16: note: each undeclared identifier is reported only once for each function it appears in
+../clnt_func.c:179:4: error: expected ‘;’ before ‘break’
+../clnt_func.c: In function ‘analyze_Response’:
+../clnt_func.c:276:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../clnt_func.c:289:3: warning: enumeration value ‘END’ not handled in switch [-Wswitch]
+../clnt_func.c: In function ‘request_Message_Connect_2_Server’:
+../clnt_func.c:431:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘quitProgram’:
+../clnt_func.c:464:3: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+make: *** [clnt_func.o] 오류 1
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+Building file: ../clnt_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_func.d" -MT"clnt_func.d" -o "clnt_func.o" "../clnt_func.c"
+../clnt_func.c: In function ‘analyze_Input’:
+../clnt_func.c:235:6: warning: suggest explicit braces to avoid ambiguous ‘else’ [-Wparentheses]
+../clnt_func.c: In function ‘analyze_Response’:
+../clnt_func.c:289:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../clnt_func.c:302:3: warning: enumeration value ‘END’ not handled in switch [-Wswitch]
+../clnt_func.c: In function ‘request_Message_Connect_2_Server’:
+../clnt_func.c:448:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘quitProgram’:
+../clnt_func.c:481:3: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘process_Chatting_Msg’:
+../clnt_func.c:371:1: warning: control reaches end of non-void function [-Wreturn-type]
+Finished building: ../clnt_func.c
+ 
+Building file: ../clnt_main.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_main.d" -MT"clnt_main.d" -o "clnt_main.o" "../clnt_main.c"
+../clnt_main.c: In function ‘main’:
+../clnt_main.c:35:3: warning: implicit declaration of function ‘init_varaibles’ [-Wimplicit-function-declaration]
+Finished building: ../clnt_main.c
+ 
+Building target: client
+Invoking: GCC C Linker
+gcc  -o "client"  ./clnt_func.o ./clnt_main.o ./low_Level_Func.o   
+./clnt_main.o: In function `main':
+/home/keroro/network_project/client/Debug/../clnt_main.c:35: undefined reference to `init_varaibles'
+collect2: ld returned 1 exit status
+make: *** [client] 오류 1
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+Building target: client
+Invoking: GCC C Linker
+gcc  -o "client"  ./clnt_func.o ./clnt_main.o ./low_Level_Func.o   
+./clnt_main.o: In function `main':
+/home/keroro/network_project/client/Debug/../clnt_main.c:35: undefined reference to `init_varaibles'
+collect2: ld returned 1 exit status
+make: *** [client] 오류 1
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+Building file: ../clnt_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_func.d" -MT"clnt_func.d" -o "clnt_func.o" "../clnt_func.c"
+../clnt_func.c: In function ‘analyze_Input’:
+../clnt_func.c:235:6: warning: suggest explicit braces to avoid ambiguous ‘else’ [-Wparentheses]
+../clnt_func.c: In function ‘analyze_Response’:
+../clnt_func.c:289:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../clnt_func.c:302:3: warning: enumeration value ‘END’ not handled in switch [-Wswitch]
+../clnt_func.c: In function ‘request_Message_Connect_2_Server’:
+../clnt_func.c:449:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘quitProgram’:
+../clnt_func.c:482:3: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+Finished building: ../clnt_func.c
+ 
+Building target: client
+Invoking: GCC C Linker
+gcc  -o "client"  ./clnt_func.o ./clnt_main.o ./low_Level_Func.o   
+./clnt_main.o: In function `main':
+/home/keroro/network_project/client/Debug/../clnt_main.c:35: undefined reference to `init_varaibles'
+collect2: ld returned 1 exit status
+make: *** [client] 오류 1
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+Building file: ../clnt_main.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_main.d" -MT"clnt_main.d" -o "clnt_main.o" "../clnt_main.c"
+Finished building: ../clnt_main.c
+ 
+Building target: client
+Invoking: GCC C Linker
+gcc  -o "client"  ./clnt_func.o ./clnt_main.o ./low_Level_Func.o   
+Finished building target: client
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+Building file: ../clnt_main.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_main.d" -MT"clnt_main.d" -o "clnt_main.o" "../clnt_main.c"
+Finished building: ../clnt_main.c
+ 
+Building target: client
+Invoking: GCC C Linker
+gcc  -o "client"  ./clnt_func.o ./clnt_main.o ./low_Level_Func.o   
+Finished building target: client
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+Building file: ../clnt_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_func.d" -MT"clnt_func.d" -o "clnt_func.o" "../clnt_func.c"
+../clnt_func.c: In function ‘analyze_Input’:
+../clnt_func.c:240:6: warning: suggest explicit braces to avoid ambiguous ‘else’ [-Wparentheses]
+../clnt_func.c: In function ‘analyze_Response’:
+../clnt_func.c:294:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../clnt_func.c:307:3: warning: enumeration value ‘END’ not handled in switch [-Wswitch]
+../clnt_func.c: In function ‘request_Message_Connect_2_Server’:
+../clnt_func.c:454:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘quitProgram’:
+Finished building: ../clnt_func.c
+ 
+Building file: ../clnt_main.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_main.d" -MT"clnt_main.d" -o "clnt_main.o" "../clnt_main.c"
+../clnt_func.c:487:3: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+Finished building: ../clnt_main.c
+ 
+Building target: client
+Invoking: GCC C Linker
+gcc  -o "client"  ./clnt_func.o ./clnt_main.o ./low_Level_Func.o   
+Finished building target: client
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+Building file: ../clnt_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_func.d" -MT"clnt_func.d" -o "clnt_func.o" "../clnt_func.c"
+../clnt_func.c: In function ‘analyze_Input’:
+../clnt_func.c:240:6: warning: suggest explicit braces to avoid ambiguous ‘else’ [-Wparentheses]
+../clnt_func.c: In function ‘analyze_Response’:
+../clnt_func.c:294:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../clnt_func.c:307:3: warning: enumeration value ‘END’ not handled in switch [-Wswitch]
+../clnt_func.c: In function ‘request_Message_Connect_2_Server’:
+../clnt_func.c:461:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘quitProgram’:
+../clnt_func.c:494:3: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+Finished building: ../clnt_func.c
+ 
+Building target: client
+Invoking: GCC C Linker
+gcc  -o "client"  ./clnt_func.o ./clnt_main.o ./low_Level_Func.o   
+Finished building target: client
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+Building file: ../clnt_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_func.d" -MT"clnt_func.d" -o "clnt_func.o" "../clnt_func.c"
+../clnt_func.c: In function ‘handleEvent_Connected’:
+../clnt_func.c:217:3: warning: implicit declaration of function ‘popPeer’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘analyze_Input’:
+../clnt_func.c:243:6: warning: suggest explicit braces to avoid ambiguous ‘else’ [-Wparentheses]
+../clnt_func.c: In function ‘analyze_Response’:
+../clnt_func.c:297:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../clnt_func.c:310:3: warning: enumeration value ‘END’ not handled in switch [-Wswitch]
+../clnt_func.c: In function ‘request_Message_Connect_2_Server’:
+../clnt_func.c:464:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘quitProgram’:
+../clnt_func.c:497:3: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+Finished building: ../clnt_func.c
+ 
+Building target: client
+Invoking: GCC C Linker
+gcc  -o "client"  ./clnt_func.o ./clnt_main.o ./low_Level_Func.o   
+./clnt_func.o: In function `handleEvent_Connected':
+/home/keroro/network_project/client/Debug/../clnt_func.c:217: undefined reference to `popPeer'
+collect2: ld returned 1 exit status
+make: *** [client] 오류 1
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+Building file: ../clnt_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_func.d" -MT"clnt_func.d" -o "clnt_func.o" "../clnt_func.c"
+../clnt_func.c: In function ‘handleEvent_Connected’:
+../clnt_func.c:218:3: warning: implicit declaration of function ‘popPeer’ [-Wimplicit-function-declaration]
+../clnt_func.c:221:3: warning: implicit declaration of function ‘send_Msg_2_peer’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘analyze_Input’:
+../clnt_func.c:249:6: warning: suggest explicit braces to avoid ambiguous ‘else’ [-Wparentheses]
+../clnt_func.c: In function ‘analyze_Response’:
+../clnt_func.c:303:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../clnt_func.c:316:3: warning: enumeration value ‘END’ not handled in switch [-Wswitch]
+../clnt_func.c: In function ‘request_Message_Connect_2_Server’:
+../clnt_func.c:470:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘quitProgram’:
+../clnt_func.c:503:3: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+Finished building: ../clnt_func.c
+ 
+Building target: client
+Invoking: GCC C Linker
+gcc  -o "client"  ./clnt_func.o ./clnt_main.o ./low_Level_Func.o   
+./clnt_func.o: In function `handleEvent_Connected':
+/home/keroro/network_project/client/Debug/../clnt_func.c:218: undefined reference to `popPeer'
+/home/keroro/network_project/client/Debug/../clnt_func.c:221: undefined reference to `send_Msg_2_peer'
+collect2: ld returned 1 exit status
+make: *** [client] 오류 1
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+Building file: ../clnt_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_func.d" -MT"clnt_func.d" -o "clnt_func.o" "../clnt_func.c"
+../clnt_func.c: In function ‘analyze_Input’:
+../clnt_func.c:250:6: warning: suggest explicit braces to avoid ambiguous ‘else’ [-Wparentheses]
+../clnt_func.c: In function ‘analyze_Response’:
+../clnt_func.c:304:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../clnt_func.c:317:3: warning: enumeration value ‘END’ not handled in switch [-Wswitch]
+../clnt_func.c: In function ‘request_Message_Connect_2_Server’:
+../clnt_func.c:471:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘quitProgram’:
+../clnt_func.c:504:3: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘popPeer’:
+../clnt_func.c:586:12: warning: variable ‘preObj’ set but not used [-Wunused-but-set-variable]
+Finished building: ../clnt_func.c
+ 
+Building file: ../clnt_main.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_main.d" -MT"clnt_main.d" -o "clnt_main.o" "../clnt_main.c"
+../clnt_main.c:6:1: error: unknown type name ‘sockaddr_in’
+../clnt_main.c:6:13: error: conflicting types for ‘peer_addr’
+../clnt_header.h:60:27: note: previous declaration of ‘peer_addr’ was here
+make: *** [clnt_main.o] 오류 1
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+Building file: ../clnt_main.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_main.d" -MT"clnt_main.d" -o "clnt_main.o" "../clnt_main.c"
+Finished building: ../clnt_main.c
+ 
+Building target: client
+Invoking: GCC C Linker
+gcc  -o "client"  ./clnt_func.o ./clnt_main.o ./low_Level_Func.o   
+Finished building target: client
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+Building file: ../clnt_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_func.d" -MT"clnt_func.d" -o "clnt_func.o" "../clnt_func.c"
+../clnt_func.c: In function ‘handleEvent_Connected’:
+../clnt_func.c:209:5: warning: pointer targets in passing argument 3 of ‘accept’ differ in signedness [-Wpointer-sign]
+/usr/include/i386-linux-gnu/sys/socket.h:214:12: note: expected ‘socklen_t * __restrict__’ but argument is of type ‘int *’
+../clnt_func.c:223:3: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../clnt_func.c:232:3: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘analyze_Input’:
+../clnt_func.c:274:6: warning: suggest explicit braces to avoid ambiguous ‘else’ [-Wparentheses]
+../clnt_func.c: In function ‘analyze_Response’:
+../clnt_func.c:341:3: warning: enumeration value ‘END’ not handled in switch [-Wswitch]
+../clnt_func.c: In function ‘request_Message_Connect_2_Server’:
+../clnt_func.c:495:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+Finished building: ../clnt_func.c
+ 
+Building target: client
+Invoking: GCC C Linker
+gcc  -o "client"  ./clnt_func.o ./clnt_main.o ./low_Level_Func.o   
+Finished building target: client
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+Building file: ../host_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"host_func.d" -MT"host_func.d" -o "host_func.o" "../host_func.c"
+../host_func.c: In function ‘handleEvent_Host’:
+../host_func.c:72:5: warning: pointer targets in passing argument 3 of ‘accept’ differ in signedness [-Wpointer-sign]
+/usr/include/i386-linux-gnu/sys/socket.h:214:12: note: expected ‘socklen_t * __restrict__’ but argument is of type ‘int *’
+../host_func.c: In function ‘analyze_Message’:
+../host_func.c:109:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+Finished building: ../host_func.c
+ 
+Building target: server
+Invoking: GCC C Linker
+gcc  -o "server"  ./host_func.o ./host_main.o ./low_Level_Func.o   
+../host_func.c:107:6: warning: variable ‘recvMsgSize’ set but not used [-Wunused-but-set-variable]
+../host_func.c: In function ‘handle_S_JOIN’:
+../host_func.c:147:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../host_func.c: In function ‘terminate_Connection’:
+Finished building target: server
+../host_func.c:246:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+Building file: ../host_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"host_func.d" -MT"host_func.d" -o "host_func.o" "../host_func.c"
+../host_func.c: In function ‘handleEvent_Host’:
+../host_func.c:72:5: warning: pointer targets in passing argument 3 of ‘accept’ differ in signedness [-Wpointer-sign]
+/usr/include/i386-linux-gnu/sys/socket.h:214:12: note: expected ‘socklen_t * __restrict__’ but argument is of type ‘int *’
+../host_func.c: In function ‘analyze_Message’:
+../host_func.c:109:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../host_func.c:107:6: warning: variable ‘recvMsgSize’ set but not used [-Wunused-but-set-variable]
+../host_func.c: In function ‘handle_S_JOIN’:
+../host_func.c:147:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../host_func.c: In function ‘terminate_Connection’:
+../host_func.c:246:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+Finished building: ../host_func.c
+ 
+Building target: server
+Invoking: GCC C Linker
+gcc  -o "server"  ./host_func.o ./host_main.o ./low_Level_Func.o   
+Finished building target: server
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+Building file: ../host_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"host_func.d" -MT"host_func.d" -o "host_func.o" "../host_func.c"
+../host_func.c: In function ‘handleEvent_Host’:
+../host_func.c:72:5: warning: pointer targets in passing argument 3 of ‘accept’ differ in signedness [-Wpointer-sign]
+/usr/include/i386-linux-gnu/sys/socket.h:214:12: note: expected ‘socklen_t * __restrict__’ but argument is of type ‘int *’
+../host_func.c: In function ‘analyze_Message’:
+../host_func.c:109:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../host_func.c:107:6: warning: variable ‘recvMsgSize’ set but not used [-Wunused-but-set-variable]
+../host_func.c: In function ‘handle_S_JOIN’:
+../host_func.c:147:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../host_func.c: In function ‘terminate_Connection’:
+../host_func.c:246:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+Finished building: ../host_func.c
+ 
+Building target: server
+Invoking: GCC C Linker
+gcc  -o "server"  ./host_func.o ./host_main.o ./low_Level_Func.o   
+Finished building target: server
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+Building file: ../host_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"host_func.d" -MT"host_func.d" -o "host_func.o" "../host_func.c"
+../host_func.c: In function ‘handleEvent_Host’:
+../host_func.c:72:5: warning: pointer targets in passing argument 3 of ‘accept’ differ in signedness [-Wpointer-sign]
+/usr/include/i386-linux-gnu/sys/socket.h:214:12: note: expected ‘socklen_t * __restrict__’ but argument is of type ‘int *’
+../host_func.c: In function ‘analyze_Message’:
+../host_func.c:109:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../host_func.c:107:6: warning: variable ‘recvMsgSize’ set but not used [-Wunused-but-set-variable]
+../host_func.c: In function ‘handle_S_JOIN’:
+../host_func.c:147:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../host_func.c: In function ‘terminate_Connection’:
+../host_func.c:246:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+Finished building: ../host_func.c
+ 
+Building target: server
+Invoking: GCC C Linker
+gcc  -o "server"  ./host_func.o ./host_main.o ./low_Level_Func.o   
+Finished building target: server
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+Building file: ../host_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"host_func.d" -MT"host_func.d" -o "host_func.o" "../host_func.c"
+../host_func.c: In function ‘handleEvent_Host’:
+../host_func.c:72:5: warning: pointer targets in passing argument 3 of ‘accept’ differ in signedness [-Wpointer-sign]
+/usr/include/i386-linux-gnu/sys/socket.h:214:12: note: expected ‘socklen_t * __restrict__’ but argument is of type ‘int *’
+../host_func.c: In function ‘analyze_Message’:
+../host_func.c:109:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../host_func.c:107:6: warning: variable ‘recvMsgSize’ set but not used [-Wunused-but-set-variable]
+../host_func.c: In function ‘handle_S_JOIN’:
+../host_func.c:147:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../host_func.c: In function ‘terminate_Connection’:
+../host_func.c:246:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+Finished building: ../host_func.c
+ 
+Building target: server
+Invoking: GCC C Linker
+gcc  -o "server"  ./host_func.o ./host_main.o ./low_Level_Func.o   
+Finished building target: server
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+Building file: ../clnt_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_func.d" -MT"clnt_func.d" -o "clnt_func.o" "../clnt_func.c"
+../clnt_func.c: In function ‘handleEvent_Connected’:
+../clnt_func.c:209:5: warning: pointer targets in passing argument 3 of ‘accept’ differ in signedness [-Wpointer-sign]
+/usr/include/i386-linux-gnu/sys/socket.h:214:12: note: expected ‘socklen_t * __restrict__’ but argument is of type ‘int *’
+../clnt_func.c:223:3: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../clnt_func.c:232:3: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘analyze_Input’:
+../clnt_func.c:274:6: warning: suggest explicit braces to avoid ambiguous ‘else’ [-Wparentheses]
+../clnt_func.c: In function ‘analyze_Response’:
+../clnt_func.c:341:3: warning: enumeration value ‘END’ not handled in switch [-Wswitch]
+../clnt_func.c: In function ‘request_Message_Connect_2_Server’:
+../clnt_func.c:495:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+Finished building: ../clnt_func.c
+ 
+Building target: client
+Invoking: GCC C Linker
+gcc  -o "client"  ./clnt_func.o ./clnt_main.o ./low_Level_Func.o   
+Finished building target: client
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+Building file: ../host_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"host_func.d" -MT"host_func.d" -o "host_func.o" "../host_func.c"
+../host_func.c: In function ‘handleEvent_Host’:
+../host_func.c:72:5: warning: pointer targets in passing argument 3 of ‘accept’ differ in signedness [-Wpointer-sign]
+/usr/include/i386-linux-gnu/sys/socket.h:214:12: note: expected ‘socklen_t * __restrict__’ but argument is of type ‘int *’
+../host_func.c: In function ‘analyze_Message’:
+../host_func.c:111:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../host_func.c:109:6: warning: variable ‘recvMsgSize’ set but not used [-Wunused-but-set-variable]
+../host_func.c: In function ‘handle_S_JOIN’:
+../host_func.c:149:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+Finished building: ../host_func.c
+../host_func.c: In function ‘terminate_Connection’:
+../host_func.c:248:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+ 
+Building target: server
+Invoking: GCC C Linker
+gcc  -o "server"  ./host_func.o ./host_main.o ./low_Level_Func.o   
+Finished building target: server
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+Building file: ../clnt_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_func.d" -MT"clnt_func.d" -o "clnt_func.o" "../clnt_func.c"
+../clnt_func.c: In function ‘handleEvent_Connected’:
+../clnt_func.c:209:5: warning: pointer targets in passing argument 3 of ‘accept’ differ in signedness [-Wpointer-sign]
+/usr/include/i386-linux-gnu/sys/socket.h:214:12: note: expected ‘socklen_t * __restrict__’ but argument is of type ‘int *’
+../clnt_func.c:223:3: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../clnt_func.c:232:3: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘analyze_Input’:
+../clnt_func.c:274:6: warning: suggest explicit braces to avoid ambiguous ‘else’ [-Wparentheses]
+../clnt_func.c: In function ‘analyze_Response’:
+../clnt_func.c:341:3: warning: enumeration value ‘END’ not handled in switch [-Wswitch]
+../clnt_func.c: In function ‘request_Message_Connect_2_Server’:
+../clnt_func.c:495:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+Finished building: ../clnt_func.c
+ 
+Building target: client
+Invoking: GCC C Linker
+gcc  -o "client"  ./clnt_func.o ./clnt_main.o ./low_Level_Func.o   
+Finished building target: client
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+Building file: ../host_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"host_func.d" -MT"host_func.d" -o "host_func.o" "../host_func.c"
+../host_func.c: In function ‘handleEvent_Host’:
+../host_func.c:72:5: warning: pointer targets in passing argument 3 of ‘accept’ differ in signedness [-Wpointer-sign]
+/usr/include/i386-linux-gnu/sys/socket.h:214:12: note: expected ‘socklen_t * __restrict__’ but argument is of type ‘int *’
+../host_func.c: In function ‘analyze_Message’:
+../host_func.c:109:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../host_func.c:107:6: warning: variable ‘recvMsgSize’ set but not used [-Wunused-but-set-variable]
+../host_func.c: In function ‘handle_S_JOIN’:
+../host_func.c:150:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../host_func.c: In function ‘terminate_Connection’:
+../host_func.c:249:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+Finished building: ../host_func.c
+ 
+Building target: server
+Invoking: GCC C Linker
+gcc  -o "server"  ./host_func.o ./host_main.o ./low_Level_Func.o   
+Finished building target: server
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+Building file: ../host_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"host_func.d" -MT"host_func.d" -o "host_func.o" "../host_func.c"
+../host_func.c: In function ‘print_S_LIST_Situation’:
+../host_func.c:50:2: warning: format ‘%s’ expects argument of type ‘char *’, but argument 2 has type ‘char **’ [-Wformat]
+../host_func.c:51:2: warning: passing argument 1 of ‘strcasecmp’ from incompatible pointer type [enabled by default]
+/usr/include/string.h:536:12: note: expected ‘const char *’ but argument is of type ‘char **’
+../host_func.c:53:2: warning: passing argument 1 of ‘strcasecmp’ from incompatible pointer type [enabled by default]
+/usr/include/string.h:536:12: note: expected ‘const char *’ but argument is of type ‘char **’
+../host_func.c: In function ‘handleEvent_Host’:
+../host_func.c:72:5: warning: pointer targets in passing argument 3 of ‘accept’ differ in signedness [-Wpointer-sign]
+/usr/include/i386-linux-gnu/sys/socket.h:214:12: note: expected ‘socklen_t * __restrict__’ but argument is of type ‘int *’
+../host_func.c: In function ‘analyze_Message’:
+../host_func.c:110:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../host_func.c:116:11: error: incompatible types when assigning to type ‘char *[10]’ from type ‘char *’
+../host_func.c:108:6: warning: variable ‘recvMsgSize’ set but not used [-Wunused-but-set-variable]
+../host_func.c: In function ‘handle_S_JOIN’:
+../host_func.c:149:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../host_func.c: In function ‘handle_S_LIST’:
+../host_func.c:194:2: warning: passing argument 1 of ‘strcasecmp’ from incompatible pointer type [enabled by default]
+/usr/include/string.h:536:12: note: expected ‘const char *’ but argument is of type ‘char **’
+../host_func.c:196:2: warning: passing argument 1 of ‘strcasecmp’ from incompatible pointer type [enabled by default]
+/usr/include/string.h:536:12: note: expected ‘const char *’ but argument is of type ‘char **’
+../host_func.c: In function ‘terminate_Connection’:
+../host_func.c:248:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+make: *** [host_func.o] 오류 1
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+Building file: ../host_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"host_func.d" -MT"host_func.d" -o "host_func.o" "../host_func.c"
+../host_func.c: In function ‘print_S_LIST_Situation’:
+../host_func.c:50:2: warning: format ‘%s’ expects argument of type ‘char *’, but argument 2 has type ‘char **’ [-Wformat]
+Finished building: ../host_func.c
+ 
+Building file: ../host_main.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"host_main.d" -MT"host_main.d" -o "host_main.o" "../host_main.c"
+../host_func.c:51:2: warning: passing argument 1 of ‘strcasecmp’ from incompatible pointer type [enabled by default]
+Finished building: ../host_main.c
+ 
+Building target: server
+Invoking: GCC C Linker
+gcc  -o "server"  ./host_func.o ./host_main.o ./low_Level_Func.o   
+Finished building target: server
+/usr/include/string.h:536:12: note: expected ‘const char *’ but argument is of type ‘char **’
+../host_func.c:53:2: warning: passing argument 1 of ‘strcasecmp’ from incompatible pointer type [enabled by default]
+ 
+/usr/include/string.h:536:12: note: expected ‘const char *’ but argument is of type ‘char **’
+../host_func.c: In function ‘handleEvent_Host’:
+../host_func.c:72:5: warning: pointer targets in passing argument 3 of ‘accept’ differ in signedness [-Wpointer-sign]
+/usr/include/i386-linux-gnu/sys/socket.h:214:12: note: expected ‘socklen_t * __restrict__’ but argument is of type ‘int *’
+../host_func.c: In function ‘analyze_Message’:
+../host_func.c:110:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../host_func.c:116:3: warning: passing argument 1 of ‘strcpy’ from incompatible pointer type [enabled by default]
+/usr/include/string.h:128:14: note: expected ‘char * __restrict__’ but argument is of type ‘char **’
+../host_func.c:108:6: warning: variable ‘recvMsgSize’ set but not used [-Wunused-but-set-variable]
+../host_func.c: In function ‘handle_S_JOIN’:
+../host_func.c:149:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../host_func.c: In function ‘handle_S_LIST’:
+../host_func.c:194:2: warning: passing argument 1 of ‘strcasecmp’ from incompatible pointer type [enabled by default]
+/usr/include/string.h:536:12: note: expected ‘const char *’ but argument is of type ‘char **’
+../host_func.c:196:2: warning: passing argument 1 of ‘strcasecmp’ from incompatible pointer type [enabled by default]
+/usr/include/string.h:536:12: note: expected ‘const char *’ but argument is of type ‘char **’
+../host_func.c: In function ‘terminate_Connection’:
+../host_func.c:248:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+../host_main.c: In function ‘main’:
+../host_main.c:31:9: warning: implicit declaration of function ‘handleEvent_Host’ [-Wimplicit-function-declaration]
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+Building file: ../clnt_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_func.d" -MT"clnt_func.d" -o "clnt_func.o" "../clnt_func.c"
+../clnt_func.c: In function ‘handleEvent_Connected’:
+../clnt_func.c:209:5: warning: pointer targets in passing argument 3 of ‘accept’ differ in signedness [-Wpointer-sign]
+/usr/include/i386-linux-gnu/sys/socket.h:214:12: note: expected ‘socklen_t * __restrict__’ but argument is of type ‘int *’
+../clnt_func.c:223:3: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../clnt_func.c:232:3: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘analyze_Input’:
+../clnt_func.c:274:6: warning: suggest explicit braces to avoid ambiguous ‘else’ [-Wparentheses]
+../clnt_func.c: In function ‘analyze_Response’:
+../clnt_func.c:341:3: warning: enumeration value ‘END’ not handled in switch [-Wswitch]
+Finished building: ../clnt_func.c
+../clnt_func.c: In function ‘request_Message_Connect_2_Server’:
+ 
+../clnt_func.c:493:2: warning: embedded ‘\0’ in format [-Wformat-contains-nul]
+Building target: client
+../clnt_func.c:495:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+Invoking: GCC C Linker
+gcc  -o "client"  ./clnt_func.o ./clnt_main.o ./low_Level_Func.o   
+../clnt_func.c: In function ‘request_Message_Disconnect_Connection’:
+../clnt_func.c:506:2: warning: embedded ‘\0’ in format [-Wformat-contains-nul]
+../clnt_func.c: In function ‘request_Message_List’:
+Finished building target: client
+../clnt_func.c:520:2: warning: embedded ‘\0’ in format [-Wformat-contains-nul]
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+Building file: ../host_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"host_func.d" -MT"host_func.d" -o "host_func.o" "../host_func.c"
+../host_func.c: In function ‘handleEvent_Host’:
+../host_func.c:72:5: warning: pointer targets in passing argument 3 of ‘accept’ differ in signedness [-Wpointer-sign]
+/usr/include/i386-linux-gnu/sys/socket.h:214:12: note: expected ‘socklen_t * __restrict__’ but argument is of type ‘int *’
+../host_func.c: In function ‘analyze_Message’:
+../host_func.c:110:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../host_func.c:108:6: warning: variable ‘recvMsgSize’ set but not used [-Wunused-but-set-variable]
+../host_func.c: In function ‘handle_S_JOIN’:
+../host_func.c:149:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../host_func.c: In function ‘terminate_Connection’:
+../host_func.c:248:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+Finished building: ../host_func.c
+ 
+Building file: ../host_main.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"host_main.d" -MT"host_main.d" -o "host_main.o" "../host_main.c"
+../host_main.c: In function ‘main’:
+../host_main.c:31:9: warning: implicit declaration of function ‘handleEvent_Host’ [-Wimplicit-function-declaration]
+Finished building: ../host_main.c
+ 
+Building target: server
+Invoking: GCC C Linker
+gcc  -o "server"  ./host_func.o ./host_main.o ./low_Level_Func.o   
+Finished building target: server
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+Building file: ../clnt_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_func.d" -MT"clnt_func.d" -o "clnt_func.o" "../clnt_func.c"
+../clnt_func.c: In function ‘handleEvent_Connected’:
+../clnt_func.c:209:5: warning: pointer targets in passing argument 3 of ‘accept’ differ in signedness [-Wpointer-sign]
+/usr/include/i386-linux-gnu/sys/socket.h:214:12: note: expected ‘socklen_t * __restrict__’ but argument is of type ‘int *’
+../clnt_func.c:223:3: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../clnt_func.c:232:3: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘analyze_Input’:
+../clnt_func.c:274:6: warning: suggest explicit braces to avoid ambiguous ‘else’ [-Wparentheses]
+../clnt_func.c: In function ‘analyze_Response’:
+../clnt_func.c:341:3: warning: enumeration value ‘END’ not handled in switch [-Wswitch]
+../clnt_func.c: In function ‘request_Message_Connect_2_Server’:
+../clnt_func.c:493:2: warning: embedded ‘\0’ in format [-Wformat-contains-nul]
+../clnt_func.c:495:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+Finished building: ../clnt_func.c
+../clnt_func.c: In function ‘request_Message_Disconnect_Connection’:
+ 
+../clnt_func.c:506:2: warning: embedded ‘\0’ in format [-Wformat-contains-nul]
+Building target: client
+Invoking: GCC C Linker
+gcc  -o "client"  ./clnt_func.o ./clnt_main.o ./low_Level_Func.o   
+../clnt_func.c: In function ‘request_Message_List’:
+../clnt_func.c:519:2: warning: embedded ‘\0’ in format [-Wformat-contains-nul]
+Finished building target: client
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+Building file: ../host_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"host_func.d" -MT"host_func.d" -o "host_func.o" "../host_func.c"
+../host_func.c: In function ‘handleEvent_Host’:
+../host_func.c:72:5: warning: pointer targets in passing argument 3 of ‘accept’ differ in signedness [-Wpointer-sign]
+/usr/include/i386-linux-gnu/sys/socket.h:214:12: note: expected ‘socklen_t * __restrict__’ but argument is of type ‘int *’
+../host_func.c: In function ‘analyze_Message’:
+../host_func.c:111:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../host_func.c:109:6: warning: variable ‘recvMsgSize’ set but not used [-Wunused-but-set-variable]
+Finished building: ../host_func.c
+ 
+Building target: server
+Invoking: GCC C Linker
+gcc  -o "server"  ./host_func.o ./host_main.o ./low_Level_Func.o   
+../host_func.c: In function ‘handle_S_JOIN’:
+../host_func.c:150:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../host_func.c: In function ‘terminate_Connection’:
+Finished building target: server
+../host_func.c:249:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+Building file: ../clnt_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_func.d" -MT"clnt_func.d" -o "clnt_func.o" "../clnt_func.c"
+../clnt_func.c: In function ‘handleEvent_Connected’:
+../clnt_func.c:209:5: warning: pointer targets in passing argument 3 of ‘accept’ differ in signedness [-Wpointer-sign]
+/usr/include/i386-linux-gnu/sys/socket.h:214:12: note: expected ‘socklen_t * __restrict__’ but argument is of type ‘int *’
+../clnt_func.c:223:3: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../clnt_func.c:232:3: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘analyze_Input’:
+../clnt_func.c:274:6: warning: suggest explicit braces to avoid ambiguous ‘else’ [-Wparentheses]
+../clnt_func.c: In function ‘analyze_Response’:
+../clnt_func.c:341:3: warning: enumeration value ‘END’ not handled in switch [-Wswitch]
+../clnt_func.c: In function ‘request_Message_Connect_2_Server’:
+../clnt_func.c:495:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+Finished building: ../clnt_func.c
+ 
+Building target: client
+Invoking: GCC C Linker
+gcc  -o "client"  ./clnt_func.o ./clnt_main.o ./low_Level_Func.o   
+Finished building target: client
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+Building file: ../host_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"host_func.d" -MT"host_func.d" -o "host_func.o" "../host_func.c"
+../host_func.c: In function ‘handleEvent_Host’:
+../host_func.c:72:5: warning: pointer targets in passing argument 3 of ‘accept’ differ in signedness [-Wpointer-sign]
+/usr/include/i386-linux-gnu/sys/socket.h:214:12: note: expected ‘socklen_t * __restrict__’ but argument is of type ‘int *’
+../host_func.c: In function ‘analyze_Message’:
+../host_func.c:109:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../host_func.c:107:6: warning: variable ‘recvMsgSize’ set but not used [-Wunused-but-set-variable]
+../host_func.c: In function ‘handle_S_JOIN’:
+../host_func.c:148:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+Finished building: ../host_func.c
+ 
+../host_func.c: In function ‘terminate_Connection’:
+../host_func.c:247:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+Building target: server
+Invoking: GCC C Linker
+gcc  -o "server"  ./host_func.o ./host_main.o ./low_Level_Func.o   
+Finished building target: server
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+Building file: ../clnt_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_func.d" -MT"clnt_func.d" -o "clnt_func.o" "../clnt_func.c"
+../clnt_func.c: In function ‘handleEvent_Connected’:
+../clnt_func.c:210:5: warning: pointer targets in passing argument 3 of ‘accept’ differ in signedness [-Wpointer-sign]
+/usr/include/i386-linux-gnu/sys/socket.h:214:12: note: expected ‘socklen_t * __restrict__’ but argument is of type ‘int *’
+../clnt_func.c:224:3: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../clnt_func.c:233:3: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘analyze_Response’:
+../clnt_func.c:340:3: warning: enumeration value ‘END’ not handled in switch [-Wswitch]
+../clnt_func.c: In function ‘request_Message_Connect_2_Server’:
+../clnt_func.c:494:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+Finished building: ../clnt_func.c
+ 
+Building target: client
+Invoking: GCC C Linker
+gcc  -o "client"  ./clnt_func.o ./clnt_main.o ./low_Level_Func.o   
+Finished building target: client
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+Building file: ../clnt_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_func.d" -MT"clnt_func.d" -o "clnt_func.o" "../clnt_func.c"
+../clnt_func.c: In function ‘handleEvent_Connected’:
+../clnt_func.c:210:5: warning: pointer targets in passing argument 3 of ‘accept’ differ in signedness [-Wpointer-sign]
+/usr/include/i386-linux-gnu/sys/socket.h:214:12: note: expected ‘socklen_t * __restrict__’ but argument is of type ‘int *’
+../clnt_func.c:224:3: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../clnt_func.c:233:3: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘analyze_Response’:
+../clnt_func.c:342:3: warning: enumeration value ‘END’ not handled in switch [-Wswitch]
+../clnt_func.c: In function ‘request_Message_Connect_2_Server’:
+../clnt_func.c:496:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+Finished building: ../clnt_func.c
+ 
+Building target: client
+Invoking: GCC C Linker
+gcc  -o "client"  ./clnt_func.o ./clnt_main.o ./low_Level_Func.o   
+Finished building target: client
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+Building file: ../clnt_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_func.d" -MT"clnt_func.d" -o "clnt_func.o" "../clnt_func.c"
+../clnt_func.c: In function ‘handleEvent_Connected’:
+../clnt_func.c:209:5: warning: pointer targets in passing argument 3 of ‘accept’ differ in signedness [-Wpointer-sign]
+/usr/include/i386-linux-gnu/sys/socket.h:214:12: note: expected ‘socklen_t * __restrict__’ but argument is of type ‘int *’
+../clnt_func.c:223:3: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../clnt_func.c:232:3: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘analyze_Response’:
+../clnt_func.c:339:3: warning: enumeration value ‘END’ not handled in switch [-Wswitch]
+../clnt_func.c: In function ‘request_Message_Connect_2_Server’:
+../clnt_func.c:493:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+Finished building: ../clnt_func.c
+ 
+Building target: client
+Invoking: GCC C Linker
+gcc  -o "client"  ./clnt_func.o ./clnt_main.o ./low_Level_Func.o   
+Finished building target: client
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+Building file: ../host_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"host_func.d" -MT"host_func.d" -o "host_func.o" "../host_func.c"
+../host_func.c: In function ‘handleEvent_Host’:
+../host_func.c:72:5: warning: pointer targets in passing argument 3 of ‘accept’ differ in signedness [-Wpointer-sign]
+/usr/include/i386-linux-gnu/sys/socket.h:214:12: note: expected ‘socklen_t * __restrict__’ but argument is of type ‘int *’
+../host_func.c: In function ‘analyze_Message’:
+../host_func.c:109:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../host_func.c:107:6: warning: variable ‘recvMsgSize’ set but not used [-Wunused-but-set-variable]
+../host_func.c: In function ‘handle_S_JOIN’:
+../host_func.c:148:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../host_func.c: In function ‘terminate_Connection’:
+../host_func.c:247:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+Finished building: ../host_func.c
+ 
+Building target: server
+Invoking: GCC C Linker
+gcc  -o "server"  ./host_func.o ./host_main.o ./low_Level_Func.o   
+Finished building target: server
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+Building file: ../clnt_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_func.d" -MT"clnt_func.d" -o "clnt_func.o" "../clnt_func.c"
+../clnt_func.c: In function ‘handleEvent_Connected’:
+../clnt_func.c:160:4: warning: implicit declaration of function ‘handle_Inviting’ [-Wimplicit-function-declaration]
+../clnt_func.c:231:5: warning: pointer targets in passing argument 3 of ‘accept’ differ in signedness [-Wpointer-sign]
+/usr/include/i386-linux-gnu/sys/socket.h:214:12: note: expected ‘socklen_t * __restrict__’ but argument is of type ‘int *’
+../clnt_func.c:245:3: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../clnt_func.c:254:3: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘analyze_Response’:
+../clnt_func.c:349:3: warning: enumeration value ‘END’ not handled in switch [-Wswitch]
+../clnt_func.c: In function ‘request_Message_Connect_2_Server’:
+../clnt_func.c:491:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+Finished building: ../clnt_func.c
+ 
+Building file: ../clnt_main.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_main.d" -MT"clnt_main.d" -o "clnt_main.o" "../clnt_main.c"
+Finished building: ../clnt_main.c
+ 
+Building file: ../low_Level_Func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"low_Level_Func.d" -MT"low_Level_Func.d" -o "low_Level_Func.o" "../low_Level_Func.c"
+Finished building: ../low_Level_Func.c
+ 
+Building target: client
+Invoking: GCC C Linker
+gcc  -o "client"  ./clnt_func.o ./clnt_main.o ./low_Level_Func.o   
+./clnt_func.o: In function `handleEvent_Connected':
+/home/keroro/network_project/client/Debug/../clnt_func.c:160: undefined reference to `handle_Inviting'
+collect2: ld returned 1 exit status
+make: *** [client] 오류 1
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+Building file: ../host_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"host_func.d" -MT"host_func.d" -o "host_func.o" "../host_func.c"
+../host_func.c: In function ‘handleEvent_Host’:
+../host_func.c:71:5: warning: pointer targets in passing argument 3 of ‘accept’ differ in signedness [-Wpointer-sign]
+/usr/include/i386-linux-gnu/sys/socket.h:214:12: note: expected ‘socklen_t * __restrict__’ but argument is of type ‘int *’
+../host_func.c: In function ‘analyze_Message’:
+../host_func.c:108:2: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+Finished building: ../host_func.c
+ 
+Building file: ../host_main.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"host_main.d" -MT"host_main.d" -o "host_main.o" "../host_main.c"
+../host_func.c:106:6: warning: variable ‘recvMsgSize’ set but not used [-Wunused-but-set-variable]
+../host_func.c: In function ‘handle_S_JOIN’:
+../host_func.c:151:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../host_func.c: In function ‘terminate_Connection’:
+../host_func.c:247:2: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+../host_main.c: In function ‘main’:
+../host_main.c:31:9: warning: implicit declaration of function ‘handleEvent_Host’ [-Wimplicit-function-declaration]
+Finished building: ../host_main.c
+ 
+Building target: server
+Invoking: GCC C Linker
+gcc  -o "server"  ./host_func.o ./host_main.o ./low_Level_Func.o   
+Finished building target: server
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+Building file: ../clnt_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_func.d" -MT"clnt_func.d" -o "clnt_func.o" "../clnt_func.c"
+In file included from ../clnt_func.c:1:0:
+../clnt_header.h:105:34: error: unknown type name ‘_var_Port’
+../clnt_func.c: In function ‘handleEvent_Connected’:
+../clnt_func.c:231:5: warning: pointer targets in passing argument 3 of ‘accept’ differ in signedness [-Wpointer-sign]
+/usr/include/i386-linux-gnu/sys/socket.h:214:12: note: expected ‘socklen_t * __restrict__’ but argument is of type ‘int *’
+../clnt_func.c:245:3: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../clnt_func.c:254:3: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘analyze_Response’:
+../clnt_func.c:349:3: warning: enumeration value ‘END’ not handled in switch [-Wswitch]
+../clnt_func.c: In function ‘request_Message_Connect_2_Server’:
+../clnt_func.c:485:2: warning: implicit declaration of function ‘tryToConnect’ [-Wimplicit-function-declaration]
+../clnt_func.c:491:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../clnt_func.c: At top level:
+../clnt_func.c:579:34: error: unknown type name ‘_var_Port’
+make: *** [clnt_func.o] 오류 1
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+Building file: ../clnt_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_func.d" -MT"clnt_func.d" -o "clnt_func.o" "../clnt_func.c"
+In file included from ../clnt_func.c:1:0:
+../clnt_header.h:105:34: error: unknown type name ‘_var_Port’
+../clnt_func.c: In function ‘handleEvent_Connected’:
+../clnt_func.c:231:5: warning: pointer targets in passing argument 3 of ‘accept’ differ in signedness [-Wpointer-sign]
+/usr/include/i386-linux-gnu/sys/socket.h:214:12: note: expected ‘socklen_t * __restrict__’ but argument is of type ‘int *’
+../clnt_func.c:245:3: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../clnt_func.c:254:3: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘analyze_Response’:
+../clnt_func.c:349:3: warning: enumeration value ‘END’ not handled in switch [-Wswitch]
+../clnt_func.c: In function ‘request_Message_Connect_2_Server’:
+../clnt_func.c:485:2: warning: implicit declaration of function ‘tryToConnect’ [-Wimplicit-function-declaration]
+../clnt_func.c:491:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../clnt_func.c: At top level:
+../clnt_func.c:579:6: warning: conflicting types for ‘tryToConnect’ [enabled by default]
+../clnt_func.c:485:2: note: previous implicit declaration of ‘tryToConnect’ was here
+make: *** [clnt_func.o] 오류 1
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+Building file: ../clnt_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_func.d" -MT"clnt_func.d" -o "clnt_func.o" "../clnt_func.c"
+../clnt_func.c: In function ‘handleEvent_Connected’:
+../clnt_func.c:231:5: warning: pointer targets in passing argument 3 of ‘accept’ differ in signedness [-Wpointer-sign]
+/usr/include/i386-linux-gnu/sys/socket.h:214:12: note: expected ‘socklen_t * __restrict__’ but argument is of type ‘int *’
+../clnt_func.c:245:3: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../clnt_func.c:254:3: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘analyze_Response’:
+../clnt_func.c:349:3: warning: enumeration value ‘END’ not handled in switch [-Wswitch]
+../clnt_func.c: In function ‘request_Message_Connect_2_Server’:
+../clnt_func.c:491:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘request_Message_Disconnect_Connection’:
+../clnt_func.c:499:2: error: too few arguments to function ‘tryToConnect’
+../clnt_header.h:105:6: note: declared here
+../clnt_func.c: In function ‘request_Message_List’:
+../clnt_func.c:513:2: error: too few arguments to function ‘tryToConnect’
+../clnt_header.h:105:6: note: declared here
+make: *** [clnt_func.o] 오류 1
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+Building file: ../clnt_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_func.d" -MT"clnt_func.d" -o "clnt_func.o" "../clnt_func.c"
+../clnt_func.c: In function ‘handleEvent_Connected’:
+../clnt_func.c:231:5: warning: pointer targets in passing argument 3 of ‘accept’ differ in signedness [-Wpointer-sign]
+/usr/include/i386-linux-gnu/sys/socket.h:214:12: note: expected ‘socklen_t * __restrict__’ but argument is of type ‘int *’
+../clnt_func.c:245:3: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../clnt_func.c:254:3: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘analyze_Response’:
+../clnt_func.c:349:3: warning: enumeration value ‘END’ not handled in switch [-Wswitch]
+../clnt_func.c: In function ‘request_Message_Connect_2_Server’:
+../clnt_func.c:491:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+Finished building: ../clnt_func.c
+ 
+Building file: ../clnt_main.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_main.d" -MT"clnt_main.d" -o "clnt_main.o" "../clnt_main.c"
+Finished building: ../clnt_main.c
+ 
+Building target: client
+Invoking: GCC C Linker
+gcc  -o "client"  ./clnt_func.o ./clnt_main.o ./low_Level_Func.o   
+Finished building target: client
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+Building file: ../clnt_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_func.d" -MT"clnt_func.d" -o "clnt_func.o" "../clnt_func.c"
+../clnt_func.c: In function ‘handleEvent_Idle’:
+../clnt_func.c:128:3: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘handleEvent_Connected’:
+../clnt_func.c:247:3: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘analyze_Response’:
+../clnt_func.c:342:3: warning: enumeration value ‘END’ not handled in switch [-Wswitch]
+../clnt_func.c: In function ‘request_Message_Connect_2_Server’:
+../clnt_func.c:484:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘processConnectionRequest’:
+../clnt_func.c:597:4: warning: pointer targets in passing argument 3 of ‘accept’ differ in signedness [-Wpointer-sign]
+/usr/include/i386-linux-gnu/sys/socket.h:214:12: note: expected ‘socklen_t * __restrict__’ but argument is of type ‘int *’
+Finished building: ../clnt_func.c
+ 
+Building file: ../clnt_main.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_main.d" -MT"clnt_main.d" -o "clnt_main.o" "../clnt_main.c"
+Finished building: ../clnt_main.c
+ 
+Building target: client
+Invoking: GCC C Linker
+gcc  -o "client"  ./clnt_func.o ./clnt_main.o ./low_Level_Func.o   
+Finished building target: client
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+Building file: ../clnt_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_func.d" -MT"clnt_func.d" -o "clnt_func.o" "../clnt_func.c"
+../clnt_func.c: In function ‘handleEvent_Idle’:
+../clnt_func.c:128:3: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../clnt_func.c:132:14: error: ‘s’ undeclared (first use in this function)
+../clnt_func.c:132:14: note: each undeclared identifier is reported only once for each function it appears in
+../clnt_func.c:132:4: error: stray ‘\’ in program
+../clnt_func.c:132:22: error: expected ‘)’ before ‘n’
+../clnt_func.c:142:4: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘analyze_Response’:
+../clnt_func.c:360:3: warning: enumeration value ‘END’ not handled in switch [-Wswitch]
+../clnt_func.c: In function ‘request_Message_Connect_2_Server’:
+../clnt_func.c:502:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘processConnectionRequest’:
+../clnt_func.c:615:4: warning: pointer targets in passing argument 3 of ‘accept’ differ in signedness [-Wpointer-sign]
+/usr/include/i386-linux-gnu/sys/socket.h:214:12: note: expected ‘socklen_t * __restrict__’ but argument is of type ‘int *’
+make: *** [clnt_func.o] 오류 1
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+Building file: ../clnt_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_func.d" -MT"clnt_func.d" -o "clnt_func.o" "../clnt_func.c"
+../clnt_func.c: In function ‘handleEvent_Idle’:
+../clnt_func.c:128:3: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../clnt_func.c:132:42: warning: missing terminating " character [enabled by default]
+../clnt_func.c:132:4: error: missing terminating " character
+../clnt_func.c:133:3: error: expected ‘)’ before ‘}’ token
+../clnt_func.c:133:3: error: expected ‘;’ before ‘}’ token
+../clnt_func.c:142:4: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘analyze_Response’:
+../clnt_func.c:360:3: warning: enumeration value ‘END’ not handled in switch [-Wswitch]
+../clnt_func.c: In function ‘request_Message_Connect_2_Server’:
+../clnt_func.c:502:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘processConnectionRequest’:
+../clnt_func.c:615:4: warning: pointer targets in passing argument 3 of ‘accept’ differ in signedness [-Wpointer-sign]
+/usr/include/i386-linux-gnu/sys/socket.h:214:12: note: expected ‘socklen_t * __restrict__’ but argument is of type ‘int *’
+make: *** [clnt_func.o] 오류 1
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project client ****
+
+make all 
+Building file: ../clnt_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_func.d" -MT"clnt_func.d" -o "clnt_func.o" "../clnt_func.c"
+../clnt_func.c: In function ‘handleEvent_Idle’:
+../clnt_func.c:128:3: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../clnt_func.c:142:4: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘analyze_Response’:
+../clnt_func.c:360:3: warning: enumeration value ‘END’ not handled in switch [-Wswitch]
+../clnt_func.c: In function ‘request_Message_Connect_2_Server’:
+../clnt_func.c:502:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘processConnectionRequest’:
+../clnt_func.c:615:4: warning: pointer targets in passing argument 3 of ‘accept’ differ in signedness [-Wpointer-sign]
+/usr/include/i386-linux-gnu/sys/socket.h:214:12: note: expected ‘socklen_t * __restrict__’ but argument is of type ‘int *’
+Finished building: ../clnt_func.c
+ 
+Building target: client
+Invoking: GCC C Linker
+gcc  -o "client"  ./clnt_func.o ./clnt_main.o ./low_Level_Func.o   
+Finished building target: client
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project server ****
+
+make all 
+make: `all'를 위해 할 일이 없습니다
+
+**** Build Finished ****

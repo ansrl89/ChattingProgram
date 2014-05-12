@@ -1,0 +1,679 @@
+#include "clnt_header.h"
+
+void initClnt() {
+	sock_Listen = socket(PF_INET, SOCK_STREAM, 0);
+	memset(&sock_Listen_addr, 0, sizeof(sock_Listen_addr));
+	sock_Listen_addr.sin_family = AF_INET;
+	sock_Listen_addr.sin_addr.s_addr = htonl(INADDR_ANY);
+	sock_Listen_addr.sin_port = htons(atoi(myPortNum));
+
+	if (bind(sock_Listen, (struct sockaddr*) &sock_Listen_addr,
+			sizeof(sock_Listen_addr)))
+		error_handling("client bind() error");
+
+	if (listen(sock_Listen, 5) == -1) // 1명인 이유는? 동시 연결 요청오면 한명씩 처리해야 함, 동시 처리해줄 소켓 없음
+		error_handling("client listen() error");
+
+	FD_ZERO(&reads);
+	FD_SET(fileno(stdin), &reads);
+	FD_SET(sock_Listen, &reads);
+	if (fd_max < sock_Listen)
+		fd_max = sock_Listen;
+
+	peerList = (clntInfo*) malloc(sizeof(clntInfo));
+
+	peerList->nextLink = NULL;
+	strcpy(peerList->nick, "Root_Node");
+}
+
+void init_varaibles(){
+	memset(&buf, 0, sizeof(buf));
+	memset(&command, 0, sizeof(command));
+	memset(&invited_Ip, 0, sizeof(invited_Ip));
+	memset(&invited_Port, 0, sizeof(invited_Port));
+}
+
+inline void copy_n_select() {
+	temp = reads;
+
+	if (select(fd_max + 1, &temp, 0, 0, NULL) == -1)
+		error_handling("client select() error");
+
+}
+
+void idle_Prompt() {
+	printf(">> ");
+	fflush(stdout);
+}
+
+void connected_Prompt() {
+	printf("%s >> ", nick);
+	fflush(stdout);
+}
+
+STATE handleEvent_Idle() {
+	STATE tmp_state = IDLE;
+	INPUTTYPE inType;
+	CMDTYPE cmdType;
+
+	if (FD_ISSET(fileno(stdin), &temp)) {
+
+		analyze_Input(tmp_state);
+
+		inType = detInputType();
+		switch (inType) {
+		case COMMAND:
+			cmdType = detCommandType();
+			switch (cmdType) {
+			case JOIN:
+				request_Message_Connect_2_Server();
+				break;
+
+			case LEAVE:
+				printNoConnection();
+				break;
+
+			case QUIT:
+				quitProgram(); // close opened sockets
+				break;
+			case LIST:
+				printNoConnection();
+				break;
+
+			case UNDEFINED:
+			default:
+				printWrongCommand(tmp_state);
+				break;
+			} // end of switch(CommandType)
+
+			break; // case COMMAND:
+		case INVITE:
+		case MESSAGE:
+		default:
+			printNoConnection();
+			break;
+		} // end of switch(InputType)
+	} // end if
+
+	else if (FD_ISSET(sock_Send, &temp)) {
+		// 연결 수락 메시지 or 연결 실패 메시지 처리
+		// 확인 후 연결 종료
+		// tmp_state 값 변경
+		RESPONSE resType = analyze_Response();
+
+		switch (resType) {
+		case OK_CONNECTION:
+			tmp_state = process_Response_Msg_Connection();
+			break;
+		case END:
+			// 서버나 peer에게서 close() 하면
+			process_MsgLen_Is_Zero();
+			break;
+		case OK_MSG:
+		case OK_LIST:
+		case OK_DISCONNECTION:
+		default:
+			// 에러 출력
+			break;
+		}
+	}
+
+	else if (FD_ISSET(sock_Listen, &temp)) {
+		// Idle 인데 연결 요청오면 일단 무시
+	}
+
+	return tmp_state;
+}
+
+STATE handleEvent_Connected() {
+	STATE tmp_state = CONNECTED;
+	INPUTTYPE inType;
+	CMDTYPE cmdType;
+
+	if (FD_ISSET(fileno(stdin), &temp)) {
+		analyze_Input(tmp_state);
+
+		inType = detInputType();
+		switch (inType) {
+		case COMMAND:
+			cmdType = detCommandType();
+			switch (cmdType) {
+			case JOIN:
+				print_Already_Connection();
+				break;
+			case QUIT:
+				quit_Flag = TRUE;
+			case LEAVE:
+				request_Message_Disconnect_Connection();
+				break;
+			case LIST:
+				request_Message_List("@list");
+				break;
+			case UNDEFINED:
+			default:
+				printWrongCommand(tmp_state);
+				break;
+			} // end of switch(CommandType)
+			break;
+
+		case INVITE:
+			handle_Inviting();
+			break;
+		case MESSAGE:
+			sendMsg();
+			break;
+		default:
+			printWrongCommand(tmp_state);
+			break;
+		} // end of switch(InputType)
+	} // end if
+
+	else if (FD_ISSET(sock_Send, &temp)) {
+		// 연결 종료 성공 or 연결 종료 실패 메시지 처리
+		// 리스트 요청 결과 받음
+		// 기존 리스트는 지워야 한다.
+		// 그리고 새 리스트 채워야함
+		// peer 에게 메시지 전송 확인 받음
+		// quit flag 검사하여 연결 종료
+		// 상황에 맞추어 tmp_state에 변화
+		RESPONSE resType = analyze_Response();
+
+		switch (resType) {
+		case OK_MSG:
+			tmp_state = process_Chatting_Msg();
+			break;
+		case OK_LIST:
+			tmp_state = process_Response_Msg_List();
+			break;
+		case OK_DISCONNECTION:
+			tmp_state = process_Response_Msg_Disconnection();
+			break;
+		case END:
+			// 메시지 보낼게 있으면 보내줘야 한다. 뭔가 소켓 프로그래밍에대한 깊은 이해가 필요
+			// select 하면 while 제대로 안돈다 흠 ..
+			if (peerList->nextLink != NULL ) {
+				// 내가 보낼 메시지가 남아 있으면
+				// 또 지금 소켓이 사용되지 않고 있다면
+				// peerList 가 empty 가 될 때까지 메시지를 보내야함
+				// peerList 에서 한명 pop 함
+				popPeer();
+
+				// peer 에게 메시지 전송요청
+				send_Msg_2_peer();
+
+				// 만약 메시지 보낼 사람 더 없으면 프롬프트 출력
+				if(peerList->nextLink == NULL){
+					connected_Prompt();
+					memset(&message, 0, sizeof(message));
+				}
+				// peer 가 메시지를 받고 연결 종료 요청을 할 것임
+				// 그럼 else if (FD_ISSET(sock_Send, &temp))
+				// 의 경우에 걸려서 END 로 가게되고 자동적으로 피어와 연결 종료
+				// 보낼 메시지가 남아 있다면 여기로 다시 들어오게 됨
+			} else {
+				// 서버나 peer에게서 close() 하면
+				process_MsgLen_Is_Zero();
+			}
+			break;
+		case OK_CONNECTION:
+		default:
+			// 에러 출력
+			break;
+		}
+	}
+	else if (FD_ISSET(sock_Listen, &temp)) {
+
+		// connected, 메시지 전송 오면 연결 해줌
+		// 파일 디스크립터 다른거 꺼야함
+		int addr_len = sizeof(sock_Recv_addr);
+
+		sock_Recv = accept(sock_Listen, (struct sockaddr*) &sock_Recv_addr,
+				&addr_len);
+		if (sock_Recv == -1)
+			error_handling(
+					"client accept() error in else if (FD_ISSET(sock_Listen, &temp))");
+
+		FD_SET(sock_Recv, &reads);
+		if (fd_max < sock_Recv)
+			fd_max = sock_Recv;
+
+		FD_CLR(sock_Listen, &reads);
+	}
+
+	else if (FD_ISSET(sock_Recv, &temp)) {
+		// 메시지 오면 처리해줌
+		read(sock_Recv, buf, BUFSIZE);
+		printf("\n%s", buf);
+
+		// 메시지 받고 연결 종료
+		FD_SET(sock_Listen, &reads);
+		if(fd_max < sock_Listen)
+			fd_max = sock_Listen;
+
+		FD_CLR(sock_Recv, &reads);
+		close(sock_Recv);
+		sock_Recv = -1;
+	}
+
+	return tmp_state;
+}
+
+void analyze_Input(STATE tmp_state) {
+	_Input_(buf); // fgets(buf, sizeof(buf), stdin);
+	if (tmp_state == IDLE) {
+		if (strlen(buf) > 0) {
+			if (buf[0] == '@') {
+				strcpy(command, strtok(buf, " "));
+
+				if (strcmp(command, "@join") == 0) {
+					strcpy(ip, strtok(NULL, " "));
+					strcpy(port, strtok(NULL, " "));
+					strcpy(nick, strtok(NULL, " "));
+				}
+			}
+		}
+	}
+	else if (tmp_state == CONNECTED) {
+		if (strlen(buf) > 0) {
+			if (buf[0] == '@')
+				strcpy(command, strtok(buf, " "));
+			else if (buf[0] == '/') {
+				strcpy(command, strtok(buf, " "));
+
+				if (strcmp(command, "@join") == 0) {
+					strcpy(invited_Ip, strtok(NULL, " "));
+					strcpy(invited_Port, strtok(NULL, " "));
+				}
+			} else {
+				strcpy(message, buf);
+			}
+		}
+	}
+}
+
+
+INPUTTYPE detInputType() {
+	INPUTTYPE val;
+
+	switch (command[0]) {
+	case '@':
+		val = COMMAND;
+		break;
+
+	case '/':
+		val = INVITE;
+		break;
+
+	default:
+		val = MESSAGE;
+		break;
+	}
+
+	return val;
+}
+
+CMDTYPE detCommandType() {
+	CMDTYPE reValue;
+
+	// @join, @leave, @quit, @list, undefined
+	if (strcasecmp(command, "@join") == 0)
+		reValue = JOIN;
+	else if (strcasecmp(command, "@leave") == 0) {
+		reValue = LEAVE;
+	} else if (strcasecmp(command, "@quit") == 0) {
+		reValue = QUIT;
+	} else if (strcasecmp(command, "@list") == 0) {
+		reValue = LIST;
+	} else
+		reValue = UNDEFINED;
+
+	return reValue;
+}
+
+RESPONSE analyze_Response(){
+	RESPONSE reValue;
+
+	int msg_len = read(sock_Send, buf, BUFSIZE);
+
+	if(msg_len == 0)
+		return END;
+
+	// 응답 메시지 종류 검사해주어야 한다
+	char* okFlag, *number;
+	RESPONSE num;
+	okFlag = strtok(buf, "_");
+	number = strtok(NULL, " ");
+	num = atoi(number);
+
+	if (strcasecmp(okFlag, OK) == 0) {
+		switch (num) {
+		case OK_MSG:
+			reValue = OK_MSG;
+			break;
+		case OK_CONNECTION:
+			reValue = OK_CONNECTION;
+			break;
+		case OK_LIST:
+			reValue = OK_LIST;
+			break;
+		case OK_DISCONNECTION:
+			reValue = OK_DISCONNECTION;
+			break;
+		}
+	} else {
+		// 여긴 메시지가 뭔가 잘못 되엇을 경우
+		// 여긴 일단 무시
+	}
+
+	return reValue;
+}
+
+STATE process_Response_Msg_Connection() {
+	// 연결 성공 메시지가 오면
+	connected_Prompt();
+
+	// 연결 되었으니 상태는 CONNECTED
+	return CONNECTED;
+}
+
+STATE process_Response_Msg_Disconnection() {
+	// 연결 종료 메시지가 오면
+	idle_Prompt();
+
+	// 연결 종료 되었으니 IDLE
+	return IDLE;
+}
+
+void process_MsgLen_Is_Zero(){
+	// 내가 보낼 메시지를 가지고 있으면 파일 디스크립터 감지를
+	// 다시 켜지 않는다.
+	// 보낼 메시지가 없으면 파일 디스크립터 감지를 켠다.
+
+	include_Sock_Input_n_Message();
+	disable_Sock_Send();
+
+	if (quit_Flag)
+		quitProgram();
+}
+
+STATE process_Response_Msg_List() {
+	// 새 리스트를 받아온다.
+	// 받아온 리스트를 출력한다.
+	// 리스트를 삭제한다.
+
+	// 새 리스트 추가
+	recvList();
+
+	// 리스트 출력
+	printList();
+
+	// 리스트 삭제
+	removeList(peerList);
+
+	// 그대로 연결은 되어 있으니
+	connected_Prompt();
+
+	return CONNECTED;
+}
+
+STATE process_Chatting_Msg(){
+	// 새 리스트를 받아온다.
+	recvList();
+	return CONNECTED;
+}
+
+void recvList() {
+	int i, j;
+	char* tmp_Nick, *tmp_Ip, *tmp_Port;
+	int count = atoi(strtok(NULL, " "));
+
+	for (i = 0; i < count; i++) {
+		// 정보를 얻어옴
+		tmp_Nick = strtok(NULL, " ");
+		tmp_Ip = strtok(NULL, " ");
+		tmp_Port = strtok(NULL, " ");
+
+		// 다음 추가할 리스트의 위치 찾아줌
+		clntInfo* obj = peerList;
+		for (j = 0; j < i; j++)
+			obj = obj->nextLink;
+
+		// 리스트에 추가
+		obj->nextLink = (clntInfo*) malloc(sizeof(clntInfo));
+		strcpy(obj->nextLink->nick, tmp_Nick);
+		strcpy(obj->nextLink->ip, tmp_Ip);
+		strcpy(obj->nextLink->port, tmp_Port);
+
+		obj->nextLink->nextLink = NULL;
+	}
+}
+
+void msgtok(char* first, char* second, char* third) {
+	first = strtok(buf, "/");
+	second = strtok(NULL, "/");
+	third = strtok(NULL, "/");
+}
+
+void printList() {
+	clntInfo* obj = peerList;
+	int cnt = 0;
+	while (obj->nextLink != NULL) {
+		printf("%d. %s  ", ++cnt, obj->nextLink->nick);
+
+		obj = obj->nextLink;
+	}
+	printf("\n");
+
+}
+
+void removeList(clntInfo* obj) {
+	// 피어의 모든 노드 free 해주어야한다
+	// 재귀적으로 해결
+	if (obj->nextLink != NULL) {
+		removeList(obj->nextLink);
+		free(obj->nextLink);
+	}
+	obj->nextLink = NULL;
+}
+
+void request_Message_Connect_2_Server() {
+	// command, ip, port, nick 순서
+	// 작업이 처리되는 동안 응답 받을 파일 핸들러 이외의 파일 핸들러는 모두 off
+	exclude_Sock_Input_n_Message();
+
+	// 연결 요청 시작
+	tryToConnect(ip, port);
+
+	// 연결 요청 끝
+	// 최초 연결 요청 메시지 포맷 만들어야함
+	sprintf(buf, "@join/%s/%s", nick, myPortNum);
+
+	write(sock_Send, buf, strlen(buf) + 1);
+}
+
+void request_Message_Disconnect_Connection() {
+	// 작업이 처리되는 동안 응답 받을 파일 핸들러 이외의 파일 핸들러는 모두 off
+	exclude_Sock_Input_n_Message();
+
+	// 연결 요청 시작
+	tryToConnect(ip, port);
+
+	// 연결 종료 요청 메시지 포맷 만들어야함
+	sprintf(buf, "@leave/%s", nick);
+
+	write(sock_Send, buf, strlen(buf) + 1);
+}
+
+void request_Message_List(char* purpose) {
+	// 작업이 처리되는 동안 응답 받을 파일 핸들러 이외의 파일 핸들러는 모두 off
+	// 요청 메시지 전달
+	exclude_Sock_Input_n_Message();
+
+	// 연결 요청 시작
+	tryToConnect(ip, port);
+
+	// 리스트 요청 메시지 포맷 만들어야함
+	sprintf(buf, "@list/%s/%s", nick, purpose);
+	write(sock_Send, buf, strlen(buf) + 1);
+}
+
+void quitProgram() {
+	//close sock_Listen, sock_Send, sock_Recv
+	if (sock_Listen > 0)
+		close(sock_Listen);
+	if (sock_Send > 0)
+		close(sock_Send);
+	if (sock_Recv > 0)
+		close(sock_Recv);
+	exit(0);
+}
+
+void printWrongCommand(STATE tmp_state) {
+	if (tmp_state == IDLE) {
+		printf("IDLE: [system]Something Wrong!\n\n");
+		idle_Prompt();
+	}
+	else if(tmp_state == CONNECTED){
+		printf("CONNECTED: [system]Something Wrong!\n\n");
+		connected_Prompt();
+	}
+}
+
+void printNoConnection() {
+	printf("idle: \"there is no connection\"\n\n");
+
+	idle_Prompt();
+}
+
+void print_Already_Connection() {
+	// connected: print "you are already connected to server <addr>"
+	printf("connected: \"you are already connected to server\"\n");
+	connected_Prompt();
+}
+
+void exclude_Sock_Input_n_Message() {
+	FD_CLR(fileno(stdin), &reads);
+	FD_CLR(sock_Listen, &reads);
+}
+
+void include_Sock_Input_n_Message() {
+	FD_SET(fileno(stdin), &reads);
+	FD_SET(sock_Listen, &reads);
+	if (fd_max < sock_Listen)
+		fd_max = sock_Listen;
+}
+
+void disable_Sock_Send() {
+	FD_CLR(sock_Send, &reads);
+	close(sock_Send);
+	sock_Send = -1;
+}
+
+char* domainService(char* __ip) {
+	struct hostent* host_entry;
+	host_entry = gethostbyname(__ip);
+
+	return inet_ntoa(*(struct in_addr*) host_entry->h_addr_list[0]);
+}
+
+void tryToConnect(char* _var_Ip, char* _var_Port) {
+	char* ip_Addr = domainService(_var_Ip);
+
+	sock_Send = socket(PF_INET, SOCK_STREAM, 0);
+	memset(&sock_Send_addr, 0, sizeof(sock_Send_addr));
+	sock_Send_addr.sin_family = AF_INET;
+	sock_Send_addr.sin_addr.s_addr = inet_addr(ip_Addr);
+	sock_Send_addr.sin_port = htons(atoi(_var_Port));
+
+	if (connect(sock_Send, (struct sockaddr*) &sock_Send_addr,
+			sizeof(sock_Send_addr)) == -1)
+		error_handling("client connect() error");
+
+	FD_SET(sock_Send, &reads);
+	if (fd_max < sock_Send)
+		fd_max = sock_Send;
+}
+
+// Message & Invite
+void sendMsg(){
+	request_Message_List("@chat");	// 채팅하기 위해 리스트 보냄
+}
+
+void popPeer(){
+	// 리스트에서 pop 해야함
+
+	clntInfo* peer = peerList;
+	clntInfo* preObj;
+	while(peer->nextLink != NULL){
+		preObj = peer;
+		peer = peer->nextLink;
+	}
+	// 가장 마지막 peer 를 찾았음
+	// 나 자신이라면 보내면 안됨
+	if(strcmp(peer->nick, nick) == 0)
+		mirror_Flag = TRUE;
+
+	// 이제 peer의 값을 복사
+	strcpy(peer_Nick, peer->nick);
+	strcpy(peer_Ip, peer->ip);
+	strcpy(peer_Port, peer->port);
+
+	// 이제 peerList 에서 마지막 리스트 삭제 해야함
+	free(peer);
+	preObj->nextLink = NULL;
+}
+
+void send_Msg_2_peer(){
+	// 같은 Nick, 즉 나에게는 메시지 보내면 안되나?
+	// 실험 결과 나 자신에게 보내면 망하는 듯
+	if (mirror_Flag > 0) {	// 나 자신이면 메시지 안보내고 출력만
+		// 메시지 맨 앞에 내 닉네임 써줌
+		sprintf(buf, "%s : %s\n", nick, message);
+		printf("\n%s", buf);
+		mirror_Flag = FALSE;
+	} else {	// 나 자신 이외에게는 메시지 보내야함
+		// 메시지 보낼 소켓 생성
+		struct sockaddr_in tmp_addr;
+		char* ip_Addr = domainService(peer_Ip);
+
+		disable_Sock_Send();
+
+		sock_Send = socket(PF_INET, SOCK_STREAM, 0);
+
+		memset(&tmp_addr, 0, sizeof(tmp_addr));
+		tmp_addr.sin_family = AF_INET;
+		tmp_addr.sin_addr.s_addr = inet_addr(ip_Addr);
+		tmp_addr.sin_port = htons(atoi(peer_Port));
+
+		if (connect(sock_Send, (struct sockaddr*) &tmp_addr, sizeof(tmp_addr))
+				== -1)
+			error_handling("client connect() error in send_Msg_2_peer");
+
+		FD_SET(sock_Send, &reads);
+		if (fd_max < sock_Send)
+			fd_max = sock_Send;
+
+		// 이제 연결 됬음, 메시지 보내야함
+		// 메시지 맨 앞에 내 닉네임 써줌
+		sprintf(buf, "%s : %s\n", nick, message);
+		write(sock_Send, buf, strlen(buf) + 1);
+
+	}
+}
+
+void handle_Inviting(){
+	// command, invited_Ip, invited_Port 순서
+	// 작업이 처리되는 동안 응답 받을 파일 핸들러 이외의 파일 핸들러는 모두 off
+	exclude_Sock_Input_n_Message();
+
+	// 연결 요청 시작
+	tryToConnect(invited_Ip, invited_Port);
+
+	// 연결 요청 끝
+	// 최초 연결 요청 메시지 포맷 만들어야함
+	sprintf(buf, "/invite", nick, myPortNum);
+
+	write(sock_Send, buf, strlen(buf) + 1);
+}
+
+

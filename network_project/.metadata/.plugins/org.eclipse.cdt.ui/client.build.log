@@ -1,0 +1,26 @@
+
+**** Build of configuration Debug for project client ****
+
+make all 
+Building file: ../clnt_func.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"clnt_func.d" -MT"clnt_func.d" -o "clnt_func.o" "../clnt_func.c"
+../clnt_func.c: In function ‘handleEvent_Idle’:
+../clnt_func.c:128:3: warning: implicit declaration of function ‘read’ [-Wimplicit-function-declaration]
+../clnt_func.c:142:4: warning: implicit declaration of function ‘close’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘analyze_Response’:
+../clnt_func.c:360:3: warning: enumeration value ‘END’ not handled in switch [-Wswitch]
+../clnt_func.c: In function ‘request_Message_Connect_2_Server’:
+../clnt_func.c:502:2: warning: implicit declaration of function ‘write’ [-Wimplicit-function-declaration]
+../clnt_func.c: In function ‘processConnectionRequest’:
+../clnt_func.c:615:4: warning: pointer targets in passing argument 3 of ‘accept’ differ in signedness [-Wpointer-sign]
+/usr/include/i386-linux-gnu/sys/socket.h:214:12: note: expected ‘socklen_t * __restrict__’ but argument is of type ‘int *’
+Finished building: ../clnt_func.c
+ 
+Building target: client
+Invoking: GCC C Linker
+gcc  -o "client"  ./clnt_func.o ./clnt_main.o ./low_Level_Func.o   
+Finished building target: client
+ 
+
+**** Build Finished ****

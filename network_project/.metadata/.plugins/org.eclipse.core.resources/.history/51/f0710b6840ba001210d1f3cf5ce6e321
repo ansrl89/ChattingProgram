@@ -1,0 +1,39 @@
+#include "host_header.h"
+
+// socket variables
+int sock_Listen = -1, sock_New = -1;
+struct sockaddr_in sock_Listen_addr, sock_New_addr;
+
+// select variables
+fd_set reads, temp;
+int fd_max;
+
+// char variables
+char buf[BUFSIZE];
+char* myPortNum;
+
+// client variables
+clntInfo* clntList;
+char clntNick[20];
+char* command;
+char* purpose;
+
+
+
+int main(int argc, char* argv[])
+{
+    myPortNum = argv[1];
+	initHost();
+
+    while(1)
+    {
+        copy_n_select();
+        handleEvent_Host();
+    }
+
+    return 0;
+}
+
+
+
+

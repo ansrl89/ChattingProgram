@@ -1,0 +1,46 @@
+#include "clnt_header.h"
+
+// socket variables
+int sock_Listen = -1, sock_Send = -1, sock_Recv = -1;
+struct sockaddr_in sock_Listen_addr, sock_Send_addr, sock_Recv_addr;
+
+// select variables
+fd_set reads, temp;
+int fd_max;
+
+// character variables
+char buf[BUFSIZE];
+char* myPortNum;
+
+char command[10], ip[20], port[10], nick[20];
+
+// peer variables
+clntInfo* peerList;
+
+// state variables
+STATE state = IDLE;
+int quit_Flag = FALSE;
+RESPONSE type = NOSTATE;
+char nickName[20];
+
+
+int main(int argc, char* argv[])
+{
+    myPortNum = argv[1];
+	initClnt();
+
+	idle_Prompt();
+	while(1)
+	{
+		init_varaibles();
+		copy_n_select();
+
+		if (state == IDLE) {
+			state = handleEvent_Idle();
+		} else if (state == CONNECTED) {
+			state = handleEvent_Connected();
+		}
+	}
+
+	return 0;
+}

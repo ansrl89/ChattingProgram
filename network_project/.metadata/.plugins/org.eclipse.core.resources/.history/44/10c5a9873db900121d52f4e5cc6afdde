@@ -1,0 +1,83 @@
+#ifndef _HOST_HEADER_
+#define _HOST_HEADER_
+
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <sys/time.h>
+#include <sys/stat.h>
+#include <netinet/in.h>
+#include <netdb.h>
+#include <arpa/inet.h>
+#include <ctype.h>
+#include <errno.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <sys/select.h>
+
+#include "low_Level_Header.h"
+
+#define BUFSIZE 1024
+
+typedef struct _clntInfo {
+	struct _clntInfo* nextLink;
+	struct sockaddr_in addr_in;
+	char nick[20];
+} clntInfo;
+
+typedef enum{
+	OK_CONNECTION = 200,
+	OK_LIST		= 201,
+	OK_DISCONNECTION = 204
+} RESPONSE;
+
+typedef enum{
+	S_JOIN,
+	S_LEAVE,
+	S_LIST,
+	S_UNDEFINED
+} REQTYPE;
+
+// socket variables
+extern int sock_Listen, sock_New;
+extern struct sockaddr_in sock_Listen_addr, sock_New_addr;
+
+// select variables
+extern fd_set reads, temp;
+extern int fd_max;
+
+// char variables
+extern char buf[BUFSIZE];
+extern char* myPortNum;
+
+// client variables
+extern clntInfo* clntList;
+extern char clntNick[20];
+extern char* command;
+
+// prompt
+void print_Accept_Situation();
+void print_S_JOIN_Situation();
+void print_S_LEAVE_Situation();
+void print_S_LIST_Situation();
+
+// group of operation
+void initHost();
+inline void copy_n_select();
+void analyze_Message();
+
+REQTYPE determineRequest();
+void handle_S_JOIN();
+void handle_S_LEAVE();
+void handle_S_LIST();
+void handle_S_UNDEFINED();
+void terminate_Connection();
+
+// low level function
+void error_handling(char *message);
+
+#endif
+
+
+
+

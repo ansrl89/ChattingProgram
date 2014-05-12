@@ -1,0 +1,252 @@
+#include "host_header.h"
+
+void initHost() {
+	sock_Listen = socket(PF_INET, SOCK_STREAM, 0);
+	memset(&sock_Listen_addr, 0, sizeof(sock_Listen_addr));
+	sock_Listen_addr.sin_family = AF_INET;
+	sock_Listen_addr.sin_addr.s_addr = htonl(INADDR_ANY);
+	sock_Listen_addr.sin_port = htons(atoi(myPortNum));
+
+	if (bind(sock_Listen, (struct sockaddr*) &sock_Listen_addr,
+			sizeof(sock_Listen_addr)))
+		error_handling("host bind() error");
+
+	if (listen(sock_Listen, 10) == -1) // 1명인 이유는? 동시 연결 요청오면 한명씩 처리해야 함, 동시 처리해줄 소켓 없음
+		error_handling("host listen() error");
+
+	FD_ZERO(&reads);
+	FD_SET(sock_Listen, &reads);
+	fd_max = sock_Listen;
+
+	clntList = (clntInfo*) malloc(sizeof(clntInfo));
+
+	//clntList->addr_in 초기화 할 것 없음
+	clntList->nextLink = NULL;
+	strcpy(clntList->nick, "Root_Node");
+}
+
+inline void copy_n_select() {
+	temp = reads;
+
+	if (select(fd_max + 1, &temp, 0, 0, NULL) == -1)
+		error_handling("host select() error");
+}
+
+void print_Accept_Situation(){
+	printf("connection from client %s, port %d\n",
+			inet_ntoa(sock_New_addr.sin_addr), sock_New_addr.sin_port);
+}
+
+void print_S_JOIN_Situation(){
+	printf("%s is entered in chatting room\n", clntNick);
+}
+
+void print_S_LEAVE_Situation(){
+	printf("%s say good-bye\n", clntNick);
+}
+
+void print_S_LIST_Situation(){
+	char* reason = "none";
+
+	if(strcasecmp(purpose, "@list") == 0)
+		reason = "for viewing the list";
+	else if(strcasecmp(purpose, "@chat") == 0)
+		reason = "for chatting to peers";
+
+	printf("%s request the peer list %s\n", clntNick, reason);
+}
+
+
+
+/**
+ * 연결 요청 : 요청 오면 연결하고 연결요청오면 리스트에 추가하고 연결을 종료 2RTT
+ * 리스트 요청 : 요청 오면 연결하고 리스 요청오면 리스트 돌려주고 연결 종료 2RTT
+ * 종료 요청 : 요청오면 연결하고 종료 요청오면 리스트에서 제거하고 연결 종료 2RTT
+ */
+void handleEvent_Host() {
+	if (FD_ISSET(sock_Listen, &temp)) // 소켓 할당
+	{
+		int addr_len = sizeof(sock_New_addr);
+
+		sock_New = accept(sock_Listen, (struct sockaddr*) &sock_New_addr,
+				&addr_len);
+		if (sock_New == -1)
+			error_handling("host accept() error");
+
+		FD_SET(sock_New, &reads);
+		if (fd_max < sock_New)
+			fd_max = sock_New;
+
+		FD_CLR(sock_Listen, &reads);
+		// 서버 로그 출력
+		print_Accept_Situation();
+	}
+
+	else if (FD_ISSET(sock_New, &temp)) {
+		analyze_Message();
+		REQTYPE request = determineRequest();
+		switch (request) {
+		case S_JOIN:
+			handle_S_JOIN();
+			break;
+		case S_LEAVE:
+			handle_S_LEAVE();
+			break;
+		case S_LIST:
+			handle_S_LIST();
+			break;
+		case S_UNDEFINED:
+			handle_S_UNDEFINED();
+			break;
+		}
+	}
+
+}
+
+void analyze_Message() {
+	int recvMsgSize;
+
+	printf("kekero 1\n");
+	recvMsgSize = read(sock_New, buf, BUFSIZE);
+	printf("kekero 2\n");
+	strcpy(clntNick, strtok(NULL, "/"));
+	printf("kekero 3\n");
+	printf("command: %s\n", command);
+	if(strcasecmp(command, "@list") == 0){
+		printf("kekero 4\n");
+		purpose = strtok(NULL, "/");
+		printf("purpose: %s", purpose);
+	}
+}
+
+REQTYPE determineRequest() {
+	REQTYPE reValue;
+
+	// @join, @leave, @quit, @list, @???
+	if (strcasecmp(command, "@join") == 0) {
+		reValue = S_JOIN;
+	} else if (strcasecmp(command, "@leave") == 0) {
+		reValue = S_LEAVE;
+	} else if (strcasecmp(command, "@list") == 0) {
+		reValue = S_LIST;
+	} else
+		reValue = S_UNDEFINED;
+
+	return reValue;
+}
+
+void handle_S_JOIN() {
+	clntInfo* last = clntList;
+	while (last->nextLink != NULL) {
+		last = last->nextLink;
+	}
+
+	last->nextLink = (clntInfo*) malloc(sizeof(clntInfo));
+	last->nextLink->addr_in = sock_New_addr;
+	strcpy(last->nextLink->nick, clntNick);
+	last->nextLink->nextLink = NULL;
+
+	// 연결 요청이 잘 되었음을 전달
+	sprintf(buf, "Kero_%d", OK_CONNECTION);
+	write(sock_New, buf, strlen(buf) + 1);
+
+	// 이제 연결 종료
+	terminate_Connection();
+
+	// 서버 로그 출력
+	print_S_JOIN_Situation();
+
+}
+
+void handle_S_LEAVE() {
+	clntInfo* find = clntList;
+	clntInfo* tmp;
+	while (find->nextLink != NULL) // 대상 피어 누구인지 찾고
+	{
+		char* dst = find->nextLink->nick;
+		if (strcmp(clntNick, dst) == 0)
+			break;
+
+		find = find->nextLink;
+	}
+	// 아이디 알아낸다
+	strcpy(clntNick, find->nextLink->nick);
+
+	// 리스트에서 제거
+	tmp = find->nextLink;
+	find->nextLink = tmp->nextLink;
+	free(tmp);
+
+	// 잘 연결 종료 되었음을 전달
+	sprintf(buf, "Kero_%d", OK_DISCONNECTION);
+	write(sock_New, buf, strlen(buf) + 1);
+
+	// 이제 연결 종료
+	terminate_Connection();
+
+	// 서버 로그 전송
+	print_S_LEAVE_Situation();
+}
+
+void handle_S_LIST() {
+	int count = 0;
+	clntInfo* obj = clntList;
+
+	// 리스트 요청이 잘 되었음을 전달
+	if (strcasecmp(purpose, "@list") == 0)
+		sprintf(buf, "Kero_%3d ", OK_LIST);
+	else if (strcasecmp(purpose, "@chat") == 0)
+		sprintf(buf, "Kero_%3d ", OK_MSG);
+
+	// 리스트에 몇명 있는지 세어줌
+	while(obj->nextLink != NULL){
+		count++;
+		obj = obj->nextLink;
+	}
+
+	// 명수를 메시지에 포함
+	strcat(buf, itoa(count, 10));
+	strcat(buf, " ");
+
+	// 피어 정보를 메시지에 포함
+	obj = clntList;
+	while (obj->nextLink != NULL) {
+
+		char* tmpNick = obj->nextLink->nick;
+		unsigned long tmp_s_addr = obj->nextLink->addr_in.sin_addr.s_addr;
+		unsigned short tmp_sin_Port = obj->nextLink->addr_in.sin_port;
+
+		char msg[50] = {0, };
+		sprintf(msg, "%s %lu %hu ", tmpNick, tmp_s_addr, tmp_sin_Port);
+
+		// 메시지 합침
+		strcat(buf, msg);
+
+		// 다음 사람
+		obj = obj->nextLink;
+	}
+	// 메시지 전송
+	write(sock_New, buf, strlen(buf)+1);
+
+	// 이제 연결 종료
+	terminate_Connection();
+	// 서버 로그 전송
+	print_S_LIST_Situation();
+}
+
+void handle_S_UNDEFINED() {
+	// 연결 종료는.. 항상 클라이언트가 서버와의 연결을 먼저 끊고
+	// 서버는 그것이 끊겼다는걸 알았을 때, 이어서 종료
+	terminate_Connection();
+
+}
+
+void terminate_Connection() {
+	FD_SET(sock_Listen, &reads);
+	if (fd_max < sock_Listen)
+		fd_max = sock_Listen;
+
+	FD_CLR(sock_New, &reads);
+	close(sock_New);
+	sock_New = -1;
+}
